@@ -6,7 +6,7 @@
   "scripts": {
     "build:ts": "tsc -p .",
     "server": "node server/index.js",
-    "dev": "nodemon -e ts --dir server/ --exec \"npm run build:ts && npm run server\"",
+    "test": "nodemon -e ts --dir server/ --exec \"npm run build:ts && npm run server\"",
     "start": "npm run build:ts && npm run server"
   },
   "author": "",
@@ -20,6 +20,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "mysql": "^2.15.0",
+    "nodemon": "^1.12.1",
     "request": "^2.83.0",
     "typescript": "^2.5.3",
     "underscore": "^1.8.3"
