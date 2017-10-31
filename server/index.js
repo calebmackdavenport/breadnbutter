@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var path = require("path");
+var express = require("express");
+var bodyParser = require("body-parser");
+var api_1 = require("./api");
+var clientPath = path.join(__dirname, '../client');
+var app = express();
+app.use(express.static(clientPath));
+app.use(bodyParser.json());
+app.use('/api', api_1.default);
+app.listen(3000);
