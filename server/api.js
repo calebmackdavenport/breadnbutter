@@ -1,6 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var express = require("express");
-var router = express.Router();
-router;
+const express = require("express");
+const recipes_ctrl_1 = require("./controllers/recipes.ctrl");
+// import ingredients from './controllers/ingredients.ctrl';
+// import food2fork from './controllers/food2fork.ctrl';
+let router = express.Router();
+router
+    .use('/recipes', recipes_ctrl_1.default);
+// .use('/ingredients', ingredients)
+// .use('/food2fork', food2fork);
 exports.default = router;
