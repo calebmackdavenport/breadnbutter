@@ -1,4 +1,12 @@
 angular.module('BreadNButter.controllers', [])
+.controller('WelcomeController', function ($scope, $http) {
+  //TODO: search bar functionality
+  //TODO: login/UserService control
+})
+.controller('SinglePageController', function ($scope, $http) {
+  //TODO: export ingredients on single page to Notes
+  //TODO: difficulty
+})
 .controller('RecipeController', function ($scope, $http) {
       $scope.searchForRecipes = function() {
         $scope.recipes = [];
@@ -19,5 +27,7 @@ angular.module('BreadNButter.controllers', [])
           });
         }
       };
-
-    });
+  })
+  .controller('NotesController', function ($scope, $http) {
+    // TODO: repurpose cart controller with localstorage
+  })
