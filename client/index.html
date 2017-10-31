@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bread N Butter</title>
 
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
@@ -24,23 +24,119 @@
     <!-- <script src="directives.js"></script> -->
     <script src="controllers.js"></script>
     <script src="app.js"></script>
-    <!-- <script src="scripts.js"></script> -->
-    
+    <script src="scripts.js"></script>
+
 </head>
 
-<body ng-controller="RecipeController">
-    <h1>This is the homepage</h1>
-    <p>dev2 </p>
-        <div>Search for recipes: <input ng-model="recipeSearch"><button ng-click="searchForRecipes()">Search</button></div>
-        <div>
-          <h3>Results:</h3>
-          <ul>
-            <li ng-repeat="recipe in recipes">
-              {{ recipe.name }} <a href="" ng-if="!recipe.loaded" ng-click="loadIngredients(recipe)">load ingredients</a>
-              <ul><li ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li></ul>
-            </li>
-          </ul>
-        </div>
+<div class="homepage">
+  <div class="homepage-hero-module">
+		<div class="video-container">
+			<div class="title-container">
+				<div class="headline">
+					<h1>BREAD & BUTTER</h1>
+				</div>
+				<div class="description">
+					<div class="inner">
+						<div class="container">
+							<div class="row">
+								<h2 id="search-message">I have...</h2>
+								<div id="custom-search-input">
+									<div class="input-group col-md-12">
+										<input type="text" class="  search-query form-control" placeholder="Enter your ingredients" />
+										<span class="input-group-btn">
+											<button class="btn btn-danger" type="button">
+												<span class=" glyphicon glyphicon-search"></span>
+											</button>
+										</span>
+									</div>
+								</div>
+								<h2 id="search-question">what should I make?</h2>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+			<div class="filter"></div>
+			<video autoplay loop class="fillWidth" muted>
+				<source src="media/food.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>
+		</div>
+	</div>
+	<div class="container" id="content">
+		<div class="row">
+				<div class="col-md-12">
+						<h2>ROTD (Recipe of the Day)</h2>
+						<img src="./media/tacos.jpg" alt="..." class="img-thumbnail" id="rotd-img">
+						<h2 class="pull-left" id="rotd-title">Margarita Marinated Flank Steak Tacos</h2>						
+						<p class="pull-left">Bacon ipsum dolor amet fatback frankfurter pork loin flank tail. Tail biltong porchetta,
+							 ribeye spare ribs kevin rump pastrami shoulder sausage pork brisket salami shankle hamburger.
+							  Corned beef chuck short loin ground round swine sausage salami. Short ribs pork loin sirloin
+							   pork. Ham hock turkey tri-tip pancetta drumstick, beef ribs short ribs pork chop kevin 
+							   frankfurter chicken turducken hamburger tongue.
+							</p>
+							<button type="button" class="btn btn-primary view-btn">VIEW RECIPE</button>
+
+					</div>
+			<div class="col-md-4 recipe-container">
+				<h3>Recipe</h3>
+
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+					nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+				<p>
+					<button type="button" class="btn btn-primary view-btn">VIEW RECIPE</button>
+				</p>
+			</div>
+			<div class="col-md-4 recipe-container">
+				<h3>Recipe</h3>
+
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+					nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+				<p>
+					<button type="button" class="btn btn-primary view-btn">VIEW RECIPE</button>
+				</p>
+			</div>
+			<div class="col-md-4 recipe-container">
+				<h3>Recipe</h3>
+
+				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod
+					semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				<p>
+					<button type="button" class="btn btn-primary view-btn">VIEW RECIPE</button>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 recipe-container">
+				<h3>Recipe</h3>
+
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+					nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+				<p>
+					<button type="button" class="btn btn-primary view-btn">VIEW RECIPE</button>
+				</p>
+			</div>
+			<div class="col-md-4 recipe-container">
+				<h3>Recipe</h3>
+
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+					nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+				<p>
+					<button type="button" class="btn btn-primary view-btn">VIEW RECIPE</button>
+				</p>
+			</div>
+			<div class="col-md-4 recipe-container">
+				<h3>Recipe</h3>
+
+				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod
+					semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				<p>
+					<button type="button" class="btn btn-primary view-btn">VIEW RECIPE</button>
+				</p>
+			</div>
+
+</div>
+    
 </body>
 
 

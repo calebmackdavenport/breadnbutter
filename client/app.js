@@ -8,7 +8,7 @@ angular.module('BreadNButter',
     $locationProvider.html5Mode(true);
     $routeProvider
     .when('/',{
-        templateUrl: "client/index.html",
+        templateUrl: "./views/home.html",
         controller: "WelcomeController"
     })
     .otherwise({
