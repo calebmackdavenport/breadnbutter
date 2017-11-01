@@ -1,11 +1,14 @@
 angular.module('BreadNButter.controllers', [])
-.controller('WelcomeController', function ($scope, $http) {
+.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
   //TODO: search bar functionality
   //TODO: login/UserService control
-})
-.controller('SearchResultsController', ['$scope', '$http', '$location', 'Recipes', 'Ingredients', '$routeParams', function($scope, $http, $location, search, Recipes, Ingredients, $routeParams) {
-  $scope.searchresults = Ingredients.get({ id: $routeParams.id });
-  // $scope.searchresults2 = Ingredients.query({ id: $routeParams.id });
+  $scope.search = function() {
+    $location.path('/search/' + $scope.searchbox);
+  }
+}])
+.controller('SearchResultsController', ['$scope', '$http', '$location', 'Recipes', 'Ingredients', '$routeParams', function($scope, $http, $location, Recipes, Ingredients, $routeParams) {
+  $scope.recipe = Ingredients.query({ id: $routeParams.id }, {id: "array"});
+
 }])
 .controller('SinglePageController', function ($scope, $http) {
   //TODO: export ingredients on single page to Notes
