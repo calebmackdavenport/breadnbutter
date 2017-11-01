@@ -3,31 +3,18 @@ angular.module('BreadNButter.controllers', [])
   //TODO: search bar functionality
   //TODO: login/UserService control
 })
+.controller('SearchResultsController', ['$scope', '$http', '$location', 'Recipes', 'Ingredients', '$routeParams', function($scope, $http, $location, search, Recipes, Ingredients, $routeParams) {
+  $scope.searchresults = Ingredients.get({ id: $routeParams.id });
+  // $scope.searchresults2 = Ingredients.query({ id: $routeParams.id });
+}])
 .controller('SinglePageController', function ($scope, $http) {
   //TODO: export ingredients on single page to Notes
   //TODO: difficulty
 })
 .controller('RecipeController', function ($scope, $http) {
-  $scope.searchForRecipes = function() {
-    $scope.recipes = [];
-    if ($scope.recipeSearch) {
-      $http.get('/api/recipe-search?q=' + encodeURI($scope.recipeSearch)).success(function(data) {
-        angular.forEach(data.recipes, function(recipe) {
-          $scope.recipes.push({ name: recipe.title, id: recipe.recipe_id, loaded: false });
-        });
-      });
-    }
-  };
 
-  $scope.loadIngredients = function(recipe) {
-    if (recipe) {
-      $http.get('/api/ingredients?recipe=' + recipe.id).success(function(data) {
-        recipe.ingredients = data.recipe.ingredients;
-        recipe.loaded = true;
-      });
-    }
-  };
   })
   .controller('NotesController', function ($scope, $http) {
     // TODO: repurpose cart controller with localstorage
   })
+  

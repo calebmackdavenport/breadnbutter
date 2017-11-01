@@ -1,4 +1,7 @@
 angular.module('BreadNButter.factories', [])
-.factory('search', ['$resource', function($resource) {
-    return $resource('/api/search/:id', { id: '@id' });
+.factory('Recipes', ['$resource', function($resource) {
+    return $resource('/api/recipes/:id', { id: '@id' });
+}])
+.factory('Ingredients', ['$resource', function($resource) {
+    return $resource('/api/ingredients/:id', { id: '@id' });
 }])

@@ -1,0 +1,9 @@
+<div id="post-container">
+    <div class="results-list list-group">
+        <div class="results list-group-item" ng-repeat="searchresult in searchresults">
+            <h2>{{ searchresult.title }}</h2>
+            <h5>By {{ searchresult.publisher }}</h5>
+            {{searchresult.image_url }}
+        </div>
+    </div>
+</div>
