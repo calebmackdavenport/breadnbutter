@@ -1,7 +1,9 @@
-// Background Video Scripts
+/** Document Ready Functions **/
+/********************************************************************/
 
 $( document ).ready(function() {
 	
+		// Resive video
 		scaleVideoContainer();
 	
 		initBannerVideoSize('.video-container .poster img');
@@ -16,6 +18,9 @@ $( document ).ready(function() {
 		});
 	
 	});
+	
+	/** Reusable Functions **/
+	/********************************************************************/
 	
 	function scaleVideoContainer() {
 	
@@ -66,3 +71,4 @@ $( document ).ready(function() {
 	
 		});
 	}
+	

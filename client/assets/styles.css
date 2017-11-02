@@ -1,20 +1,9 @@
-/* Homepage Video Styles */
-
-h1 {
-	top: 1%;
-	left: 3%;
-	width: 94%;
-	font-size: 30px;
-	letter-spacing: 3px;
-	color: #fff;
-	font-family: Montserrat, sans-serif;
-	text-align: left;
-}
-
+/* Video Background Styles */
 .homepage-hero-module {
 	border-right: none;
 	border-left: none;
 	position: relative;
+	width: 100vw;
 }
 
 .no-video .video-container video,
@@ -35,13 +24,9 @@ h1 {
 	width: 100%;
 	overflow: hidden;
 	background: #000;
+	width: 100vw;
 }
 
-.video-container .poster img {
-	width: 100%;
-	bottom: 0;
-	position: absolute;
-}
 
 .video-container .filter {
 	z-index: 100;
@@ -95,18 +80,17 @@ h1 {
 }
 
 /* Search Bar Styles */
-
 #search-message {
 	margin-top: 210px;
-	margin-left: -70px;
+	margin-left: 170px;
 	margin-bottom: -10px;
 	font-size: 60px;
 }
 
 #search-question {
 	margin-top: 10px;
-	margin-left: 170px;
-	font-size: 50px;
+	margin-left: 90px;
+	font-size: 40px;
 }
 
 #custom-search-input {
@@ -148,22 +132,31 @@ h1 {
 }
 
 /* Homepage Recipes Styles */
+#rotd {
+	margin-bottom: 40px;
+}
+
+.rotd-container {
+	margin-top: 40px;
+}
 
 #rotd-img {
 	width: 300px;
 	height: 300px;
 	float: left;
 	margin-right: 15px;
-	margin-bottom: 35px;
+	margin-bottom: 25px;
 }
 
 #rotd-title {
 	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 .view-btn {
 	background-color: rgb(124, 0, 0);
 	border: 1px solid rgb(124, 0, 0);;
+	color: white;
 }
 
 .view-btn:hover {
@@ -175,6 +168,54 @@ h1 {
 .recipe-container {
 	margin-bottom: 30px;
 }
+
+#week-header {
+	text-align: center;
+	font-weight: bold;
+	font-size: 46px;
+	margin-bottom: -3px;
+	margin-top: 20px;
+}
+
+#week-caption {
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 45px;
+}
+
+#week-img {
+	height: 200px;
+	width: 200px;
+	float: left;
+	margin-right: 10px;
+}
+
+hr {
+	border: 2px solid rgba(0, 0, 0, 0.445);
+}
+
+/* Navigation Styles */
+.navbar {
+	background-color: white;
+}
+
+#logo {
+	font-family: Montserrat, sans-serif;
+	letter-spacing: 3px;
+	font-size: 20px;
+}
+
+.custom-toggler.navbar-toggler {
+	border: none;
+}
+
+/* Carousel Styles */
+
+.custom-carousel {
+	margin-bottom: 100px;
+	margin-left: 270px;
+}
+
 
 
 .form-group{
