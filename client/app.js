@@ -3,8 +3,7 @@ angular.module('BreadNButter',
 'ngResource', 
 'BreadNButter.controllers', 
 'BreadNButter.factories',
-'BreadNButter.services',
-'BreadNButter.directives'])
+'BreadNButter.services'])
 
 .config(['$locationProvider', '$routeProvider', function( $locationProvider, $routeProvider){
     $locationProvider.html5Mode(true);

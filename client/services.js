@@ -11,7 +11,7 @@ angular.module('BreadNButter.services', [])
                     return;
                 }
                 var speed = Math.round(distance / 100);
-                if (speed >= 5) speed = 42;
+                if (speed >= 5) speed = 52;
                 var step = Math.round(distance / 25);
                 var leapY = stopY > startY ? startY + step : startY - step;
                 var timer = 0;
@@ -41,7 +41,7 @@ angular.module('BreadNButter.services', [])
 
                 function elmYPosition(eID) {
                     var elm = document.getElementById(eID);
-                    var y = elm.offsetTop;
+                    var y = elm.offsetTop - 68;
                     var node = elm;
                     while (node.offsetParent && node.offsetParent != document.body) {
                         node = node.offsetParent;
