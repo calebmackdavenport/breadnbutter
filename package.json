@@ -2,8 +2,9 @@
   "name": "breadnbutter",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "6.11.3"
+  "engines":{
+    "node": "6.11.3",
+    "npm": "3.10.10"
   },
   "main": "server/index.js",
   "scripts": {
@@ -25,7 +26,6 @@
     "mysql": "^2.15.0",
     "nodemon": "^1.12.1",
     "request": "^2.83.0",
-    "sendgrid": "^5.2.3",
     "typescript": "^2.5.3",
     "underscore": "^1.8.3"
   }
