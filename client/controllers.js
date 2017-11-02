@@ -13,23 +13,26 @@ angular.module('BreadNButter.controllers', [])
     let searchVar = $scope.searchbox1;
   }
 
-  $scope.searchmore = function() {
+  $scope.searchMore = function() {
     // $location.path('localhost:3000/search/' + searchVar + "&page=2");
-    $location.path("&page=2");
+    $location.replace('/search/' + $scope.searchbox1 + '&page=2');
+    console.log(1);
   }
 }])
 .controller('SearchResultsController', ['$scope', '$http', '$location', 'Recipes', 'Ingredients', '$routeParams', function($scope, $http, $location, Recipes, Ingredients, $routeParams) {
   $scope.recipe = Ingredients.query({ id: $routeParams.id }, {id: "array"});
 
+  $scope.searchMore = function() {
+    // $location.path('localhost:3000/search/' + searchVar + "&page=2");
+    $location.path('/search/' + searchVar + '&page=2');
+    console.log(2);
+  }
 }])
 .controller('SinglePageController', function ($scope, $http) {
   //TODO: export ingredients on single page to Notes
   //TODO: difficulty
 })
-.controller('RecipeController', function ($scope, $http) {
-
-  })
-  .controller('NotesController', function ($scope, $http) {
+.controller('NotesController', function ($scope, $http) {
     // TODO: repurpose cart controller with localstorage
-  })
+})
   
