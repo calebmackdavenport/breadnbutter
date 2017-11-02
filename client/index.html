@@ -19,12 +19,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script>
-    <!-- <script src="services.js"></script> -->
+    <script src="services.js"></script>
     <script src="factories.js"></script>
-    <!-- <script src="directives.js"></script> -->
     <script src="controllers.js"></script>
     <script src="app.js"></script>
-    <script src="scripts.js"></script>
+	<script src="scripts.js"></script>
+	<script src="directives.js"></script>
 
 </head>
 
@@ -44,8 +44,11 @@
 									<div class="input-group col-md-12">
 
                     <form ng-submit="search()" ng-controller="WelcomeController">
-                    <input type="text" class="  search-query form-control" ng-model='searchbox' ng-Submit="search()" placeholder="Enter your ingredients" />
+                    <input type="text" class="  search-query form-control" ng-model='searchbox1' placeholder="Enter your ingredients" />
+                    <!-- <input type="text" class="  search-query form-control" ng-model='searchbox2' placeholder="Enter your ingredients" /> -->
+                    <!-- <button ng-submit="search()">Search Ingredients</button> -->
                     </form>
+
 
 										<span class="input-group-btn">
 											<button class="btn btn-danger" type="button">
@@ -145,6 +148,9 @@
     
 </body>
 
+<a id="bottom">
 <div ng-view></div>
+</a>
+
 
 </html>

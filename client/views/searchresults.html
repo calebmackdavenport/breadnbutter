@@ -1,4 +1,5 @@
-<div id="container">
+<div id="container" on-scroll-to-bottom="searchmore()">
+    <a id="searchresults"></a>
         <div ng-repeat="x in recipe">
             <h2> {{ x.title }}</h2>
             <h5> {{ x.publisher }}</h5>

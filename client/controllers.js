@@ -1,9 +1,21 @@
 angular.module('BreadNButter.controllers', [])
-.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
+.controller('WelcomeController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
   //TODO: search bar functionality
   //TODO: login/UserService control
+
   $scope.search = function() {
-    $location.path('/search/' + $scope.searchbox);
+    $timeout(function () {
+    $location.path('/search/' + $scope.searchbox1); // + ", " + $scope.searchbox2
+    $location.hash('bottom');
+    Smooth.scrollTo('bottom'); }, 600);
+
+    //instantiate variable to hold value even if user navigates away from page
+    let searchVar = $scope.searchbox1;
+  }
+
+  $scope.searchmore = function() {
+    // $location.path('localhost:3000/search/' + searchVar + "&page=2");
+    $location.path("&page=2");
   }
 }])
 .controller('SearchResultsController', ['$scope', '$http', '$location', 'Recipes', 'Ingredients', '$routeParams', function($scope, $http, $location, Recipes, Ingredients, $routeParams) {
