@@ -210,10 +210,8 @@ hr {
 }
 
 /* Carousel Styles */
-
 .custom-carousel {
-	margin-bottom: 100px;
-	margin-left: 270px;
+	margin-left: 240px;
 }
 
 
@@ -228,9 +226,6 @@ hr {
     margin: 0 auto 1.5em auto;
 }
 
-h2{
-    text-align: center;
-}
 
 #ingredientsinput{
     height: 7em;
