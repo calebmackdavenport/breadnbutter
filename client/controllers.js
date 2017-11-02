@@ -1,33 +1,38 @@
 angular.module('BreadNButter.controllers', [])
-.controller('WelcomeController', function ($scope, $http) {
+.controller('WelcomeController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
   //TODO: search bar functionality
   //TODO: login/UserService control
-})
+
+  $scope.search = function() {
+    $timeout(function () {
+    $location.path('/search/' + $scope.searchbox1); // + ", " + $scope.searchbox2
+    $location.hash('bottom');
+    Smooth.scrollTo('bottom'); }, 600);
+
+    //instantiate variable to hold value even if user navigates away from page
+    let searchVar = $scope.searchbox1;
+  }
+
+  $scope.searchMore = function() {
+    // $location.path('localhost:3000/search/' + searchVar + "&page=2");
+    $location.replace('/search/' + $scope.searchbox1 + '&page=2');
+    console.log(1);
+  }
+}])
+.controller('SearchResultsController', ['$scope', '$http', '$location', 'Recipes', 'Ingredients', '$routeParams', function($scope, $http, $location, Recipes, Ingredients, $routeParams) {
+  $scope.recipe = Ingredients.query({ id: $routeParams.id }, {id: "array"});
+
+  $scope.searchMore = function() {
+    // $location.path('localhost:3000/search/' + searchVar + "&page=2");
+    $location.path('/search/' + searchVar + '&page=2');
+    console.log(2);
+  }
+}])
 .controller('SinglePageController', function ($scope, $http) {
   //TODO: export ingredients on single page to Notes
   //TODO: difficulty
 })
-.controller('RecipeController', function ($scope, $http) {
-  $scope.searchForRecipes = function() {
-    $scope.recipes = [];
-    if ($scope.recipeSearch) {
-      $http.get('/api/recipe-search?q=' + encodeURI($scope.recipeSearch)).success(function(data) {
-        angular.forEach(data.recipes, function(recipe) {
-          $scope.recipes.push({ name: recipe.title, id: recipe.recipe_id, loaded: false });
-        });
-      });
-    }
-  };
-
-  $scope.loadIngredients = function(recipe) {
-    if (recipe) {
-      $http.get('/api/ingredients?recipe=' + recipe.id).success(function(data) {
-        recipe.ingredients = data.recipe.ingredients;
-        recipe.loaded = true;
-      });
-    }
-  };
-  })
-  .controller('NotesController', function ($scope, $http) {
+.controller('NotesController', function ($scope, $http) {
     // TODO: repurpose cart controller with localstorage
-  })
+})
+  

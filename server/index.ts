@@ -24,6 +24,7 @@ app.get('/api/recipe-search', function(req, res) {
     request(url, function (error: any, response: any, body: any) {
         if (!error && response.statusCode == 200) {
             res.send(body);
+            console.log("test1");
         }
         else {
             res.status(404);
@@ -36,6 +37,7 @@ app.get('/api/ingredients', function(req, res) {
     request(url, function (error:any, response:any, body:any) {
         if (!error && response.statusCode == 200) {
             res.send(body);
+            console.log("test2");
         }
         else {
             res.status(404);
