@@ -2,6 +2,10 @@
   "name": "breadnbutter",
   "version": "1.0.0",
   "description": "",
+  "engines":{
+    "node": "6.11.3",
+    "npm": "3.10.10"
+  },
   "main": "server/index.js",
   "scripts": {
     "build:ts": "tsc -p .",
