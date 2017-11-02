@@ -21,6 +21,14 @@ angular.module('BreadNButter',
         templateUrl: "./views/searchresults.html",
         controller: "SearchResultsController"
     })
+    .when('/contact', {
+        templateUrl: "./views/contact.html",
+        controller: "ContactPageController"
+    })
+    .when('/yourrecipe', {
+        templateUrl: "./views/yourrecipes.html",
+        controller: "YourRecipeController"
+    })
     .otherwise({
         redirectTo: '/'
     });
