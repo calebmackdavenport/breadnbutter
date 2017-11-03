@@ -40,7 +40,7 @@ angular.module('BreadNButter',
     })
     .when('/recipe/:id', {
         templateUrl: 'views/single.html'
-    }
+    })
     .when('/contact', {
         templateUrl: "./views/contact.html",
         controller: "ContactPageController"
