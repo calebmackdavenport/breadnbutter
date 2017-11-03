@@ -21,6 +21,7 @@ angular.module('BreadNButter.directives', [])
         }
     };
 });
+
 angular.module('BreadNButter.directives', [])
 .directive('mainNav', [function() {
 	return {
