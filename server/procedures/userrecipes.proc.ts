@@ -1,4 +1,4 @@
-// TODO: get the procedures from Stinson
+//TODO: get the procedures from Stinson
 
 
 // import { row, rows, empty } from '../config/db';
