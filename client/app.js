@@ -4,7 +4,8 @@ angular.module('BreadNButter',
 'BreadNButter.controllers', 
 'BreadNButter.factories',
 'BreadNButter.services',
-'BreadNButter.directives'])
+'BreadNButter.directives'
+])
 
 .config(['$locationProvider', '$routeProvider', function( $locationProvider, $routeProvider){
     $locationProvider.html5Mode(true);
@@ -20,6 +21,9 @@ angular.module('BreadNButter',
     .when('/search/:id', {
         templateUrl: "./views/searchresults.html",
         controller: "SearchResultsController"
+    })
+    .when('/recipe/:id', {
+        templateUrl: 'views/single.html'
     })
     .otherwise({
         redirectTo: '/'

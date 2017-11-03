@@ -8,4 +8,12 @@
 //     let emailContent = new helper.Content('text/html', message);
 
 //     let mail = new helper.Mail(fromEmail, subject, toEmail, emailContent);
+
+//     let request = sg.emptyRequest({
+//         method:'POST',
+//         path:'v3/mail/send',
+//         body: mail.toJSON()
+//     });
+
+//     return sg.API(request)
 // }

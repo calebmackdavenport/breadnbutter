@@ -21,3 +21,13 @@ angular.module('BreadNButter.directives', [])
         }
     };
 });
+angular.module('BreadNButter.directives', [])
+.directive('mainNav', [function() {
+	return {
+		templateUrl: 'directives/navbar.html',
+		restrict: 'E', // can only appear as an element.. can't be an attribute.. custom html element
+		scope: {
+			activePage: '=' // shorthand for 
+		}
+	};
+}])
