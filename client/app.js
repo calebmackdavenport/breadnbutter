@@ -21,6 +21,22 @@ angular.module('BreadNButter',
     .when('/search/:id', {
         templateUrl: "./views/searchresults.html",
         controller: "SearchResultsController"
+    })  
+    .when('/userrecipehome', {
+        templateUrl: "./views/userrecipehome.html",
+        controller: "YourRecipeHomeController"  //Login Controller?
+    })
+    .when('/addrecipe', {
+        templateUrl: "./views/addrecipe.html",
+        controller: "AddRecipeController"
+    })
+    .when('/alluserrecipes', {
+        templateUrl: "./views/alluserrecipes.html",
+        controller: "AllUserRecipesController" 
+    })
+    .when('/singleuserrecipe', {
+        templateUrl: "./views/singleuserrecipe.html",
+        controller: "UserRecipeController" 
     })
     .when('/recipe/:id', {
         templateUrl: 'views/single.html'
@@ -29,9 +45,9 @@ angular.module('BreadNButter',
         templateUrl: "./views/contact.html",
         controller: "ContactPageController"
     })
-    .when('/yourrecipe', {
-        templateUrl: "./views/yourrecipes.html",
-        controller: "YourRecipeController"
+    .when('/aboutus', {
+        templateUrl: "./views/aboutus.html",
+        controller: "AboutUsController"
     })
     .otherwise({
         redirectTo: '/'
