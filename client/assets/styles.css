@@ -280,7 +280,8 @@ h2{
     text-align: center;
     size: 15;
     font-weight: bold;
-    font-size: 90px;
+	font-size: 90px;
+	color: white;
 }
 
 #newrecipeform{
@@ -303,10 +304,12 @@ h2{
     overflow: hidden;
     position:absolute;
     top:0;left:0;
-    z-index:1;
+	z-index:1;
+
 }
 
 .aboutusheading{
+	color:white;
     text-align: center;
     size: 15;
     font-weight: bold;
@@ -337,4 +340,39 @@ h2{
 
 #social{
     text-align: center;
+}
+
+.aboutuscontent{
+	width: 60em;
+	margin: auto;
+}
+
+.jumbotron-billboard .userportal {
+    margin-bottom: 0px;
+    opacity: 0.9;
+    color: #fff;
+    background: url("https://images.unsplash.com/photo-1505233276084-d944dbc8f17d?auto=format&fit=crop&w=2550&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position:absolute;
+    top:0;left:0;
+	z-index:1;
+}
+
+#userportal{
+	width: 60em;
+	margin: auto;
+}
+
+#inputlogin{
+	width: 16em;
+
+}
+
+#carousel-item-size{
+	width: 25em;
+	height: 21em;
+	margin: auto;
 }
