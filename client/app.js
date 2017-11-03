@@ -3,7 +3,9 @@ angular.module('BreadNButter',
 'ngResource', 
 'BreadNButter.controllers', 
 'BreadNButter.factories',
-'BreadNButter.services'])
+'BreadNButter.services',
+'BreadNButter.directives'
+])
 
 .config(['$locationProvider', '$routeProvider', function( $locationProvider, $routeProvider){
     $locationProvider.html5Mode(true);
@@ -36,6 +38,9 @@ angular.module('BreadNButter',
         templateUrl: "./views/singleuserrecipe.html",
         controller: "UserRecipeController" 
     })
+    .when('/recipe/:id', {
+        templateUrl: 'views/single.html'
+    }
     .when('/contact', {
         templateUrl: "./views/contact.html",
         controller: "ContactPageController"
