@@ -1,0 +1,24 @@
+<div class="menu-wrap">
+    <div class="menu-sidebar">
+        <ul class="menu">
+            <h3>Your Grocery List <button ng-click="export(args)" id="cancel-return" class="btn btn-lg" type="submit" value="Export To Notes">Export To CSV</button> <button ng-click="exportText(args)" id="cancel-return" class="btn btn-lg" type="submit" value="Export To Notes">Export To Text</button> </h3>
+                <!-- <button ng-click="export(args)" id="cancel-return" class="btn btn-lg" type="submit" value="Export To Notes">Export To Notes</button> -->
+            <br>
+            <br>
+            <div class="input-group" ng-repeat="ingredient in list">
+                <div class="taco">
+                    <div class="taco">
+                            <button id="cancel-return" class="btn btn-xs" style="margin-top: 0.25em; float: left;"
+                            ng-click="removeItem(ingredient)">Remove</button>
+                        <table>
+                        {{ingredient}}
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</ul>
+</div>
+</div>
