@@ -34,9 +34,6 @@ angular.module('BreadNButter',
         templateUrl: "./views/singleuserrecipe.html",
         controller: "UserRecipeController" 
     })
-    .when('/recipe/:id', {
-        templateUrl: 'views/single.html'
-    }
     .when('/contact', {
         templateUrl: "./views/contact.html",
         controller: "ContactPageController"
