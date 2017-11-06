@@ -1,34 +1,32 @@
 <main-nav></main-nav>
-<div class="homepage-hero-module">
-		<div class="video-container">
-			<div class="title-container">
+<div class="career-header">
+		<div class="preview-container">
+				<video id="video-preview" autoplay="" loop="" muted>
+					<source src="media/food.mp4" type="video/mp4">
+				</video>
+				<div class="content-container inner-width">
 				<h2 id="search-message">I have...</h2>
-				<div class="description">
-					<div class="inner">
-						<div id="custom-search-input">
+				<div id="custom-search-input">
 						<form ng-submit="search()" ng-controller="WelcomeController">
-							<input type="text" class="search-query form-control" ng-model='searchbox1' id="firstSearch" placeholder="Enter your ingredient"
+							<input type="text" class="search-query form-control" ng-model='searchbox1' id="firstSearch" placeholder="Enter your ingredients..."
 							/>
-							<input type="text" class="search-query form-control" ng-model='searchbox2' id="secondSearch" placeholder="Enter another if you'd like"
+							<input type="text" class="search-query form-control" ng-model='searchbox2' ng-show='showBox(firstVal)' id="secondSearch" placeholder="Enter another if you'd like"
 							/>
-							<input type="text" class="search-query form-control" ng-model='searchbox3' id="thirdSearch" placeholder="Anything else?"
+							<input type="text" class="search-query form-control" ng-model='searchbox3' ng-show='showBox(secondVal)' id="thirdSearch" placeholder="Anything else?"
 							/>
+							<p>(ex: cheese, bread, garlic)</p>
 							<button type="submit" ng-submit="search()" class="btn search-btn">What should I make?</button>
 						</form>
 						</div>
-					</div>
 				</div>
 			</div>
-			<video autoplay loop class="fillWidth" muted>
-				<source src="media/food.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>
-		</div>
-	</div>
+			 </div>
 	<div class="container" id="content">
 		<div class="row">
 			<div class="col-md-12" id="rotd">
 				<h2>ROTD (Recipe of the Day)</h2>
-				<img src="media/tacos.jpg" alt="..." class="img-thumbnail" id="rotd-img">
-				<h2 id="rotd-title">Margarita Marinated Flank Steak Tacos</h2>
+				<img src="media/hotchicken.jpg" alt="..." class="img-thumbnail" id="rotd-img">
+				<h2 id="rotd-title">Nashville Hot Chicken</h2>
 				<p>Bacon ipsum dolor amet fatback frankfurter pork loin flank tail. Tail biltong porchetta, ribeye spare ribs kevin rump
 					pastrami shoulder sausage pork brisket salami shankle hamburger. Corned beef chuck short loin ground round swine sausage
 					salami. Short ribs pork loin sirloin pork. Ham hock turkey tri-tip pancetta drumstick, beef ribs short ribs pork chop
@@ -57,7 +55,7 @@
 			<div class="col-md-4 recipe-container">
 				<h3>Tuesday</h3>
 				<h4 id="week-title">Recipe Name</h4>
-				<img src="media/food2.jpg" alt="..." class="img-thumbnail" id="week-img">
+				<img src="media/tacos.jpg" alt="..." class="img-thumbnail" id="week-img">
 				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condime nibh,
 					ut fermenm massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
 				<p>

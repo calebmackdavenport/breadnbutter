@@ -19,6 +19,10 @@ angular.module('BreadNButter.controllers', [])
     // $location.replace('/search/' + $scope.searchbox1 + '&page=2');
     console.log(1);
   }
+
+  $scope.goToSingle = function() {
+    $location.path('/recipe/:id');
+  }
 }])
 .controller('SearchResultsController', ['$scope', '$timeout', '$location', 'Recipes', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Recipes, Ingredients, $routeParams, Smooth) {
   $scope.recipe = Ingredients.query({ id: $routeParams.id }, {id: "array"});

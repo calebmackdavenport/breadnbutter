@@ -1,97 +1,11 @@
-/* Video Background Styles */
-.homepage-hero-module {
-	border-right: none;
-	border-left: none;
-	position: relative;
-	width: 100vw;
-}
-
-.no-video .video-container video,
-.touch .video-container video {
-	display: none;
-}
-
-.no-video .video-container .poster,
-.touch .video-container .poster {
-	display: block !important;
-}
-
-.video-container {
-	position: relative;
-	bottom: 0%;
-	left: 0%;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	background: #000;
-	width: 100vw;
-}
-
-
-.video-container .filter {
-	z-index: 100;
-	position: absolute;
-	background: rgba(0, 0, 0, 0.4);
-	width: 100%;
-}
-
-.video-container .title-container {
-	z-index: 1000;
-	position: absolute;
-	top: 2%;
-	left: 2%;
-	width: 100%;
-	text-align: center;
-	color: #fff;
-}
-
-.video-container .description .inner {
-	font-size: 1em;
-	width: 45%;
-	margin: 0 auto;
-}
-
-.video-container .link {
-	position: absolute;
-	bottom: 3em;
-	width: 100%;
-	text-align: center;
-	z-index: 1001;
-	font-size: 2em;
-	color: #fff;
-}
-
-.video-container .link a {
-	color: #fff;
-}
-
-.video-container video {
-	position: absolute;
-	z-index: 0;
-	bottom: 0;
-}
-
-.video-container video.fillWidth {
-	width: 100%;
-}
-
-#content {
-	margin-top: 50px;
-}
-
 /* Search Bar Styles */
 #search-message {
-	margin-top: 210px;
+	margin-top: 100px;
 	margin-bottom: -10px;
-	margin-left: -90px;
+	margin-left: -110px;
 	font-size: 60px;
 }
 
-#search-question {
-	margin-top: 10px;
-	margin-left: 90px;
-	font-size: 40px;
-}
 
 #custom-search-input {
 	margin:0;
@@ -99,9 +13,14 @@
 	padding: 0;
 }
 
+#custom-search-input p {
+	margin-left: -120px; 
+	letter-spacing: 2px;
+}
+
 #custom-search-input .search-query {
 	margin-top: 5px;
-	margin-left: -90px;
+	margin-left: 320px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 10px;
@@ -118,7 +37,7 @@
 	width: 300px;
 	font-size: 25px;
 	margin-top: 10px;
-	margin-left: -120px;
+	margin-left: -130px;
 	background-color: rgb(124, 0, 0);
 	border: 1px solid rgb(124, 0, 0);;
 	color: white;
@@ -375,12 +294,14 @@ hr {
 	width: 25em;
 	height: 21em;
 	margin: auto;
+}
 /* Single View Styles */
 
 #single-recipe-title {
 	margin-top: 100px;
+	margin-bottom: 10px;
+	margin-left: -100px;
 	text-align: center;
-	margin-left: -70px;
 	font-size: 35px;
 	font-weight: bold;
 }
@@ -391,12 +312,80 @@ hr {
 }
 
 .recipe-description {
-	margin-top: 50px;
+	margin-bottom: 100px;
 }
 
 #single-recipe-caption {
 	text-align: center;
 	font-size: 15px;
 	margin-bottom: 45px;
-	margin-left: -60px;
+	margin-left: -90px;
 }
+
+.ingredients-container {
+	display: block;
+}
+
+/* Testing */
+
+video { 
+	transform: scaleX(1.129); 
+	-webkit-transform: scaleX(1.126); 
+	-moz-transform: scaleX(1.126);
+	margin-bottom: 70px;
+  }
+
+.preview-container {
+	position: relative;
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+	top: 0;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	}
+
+	#video-preview {
+	min-width: 100%;
+	}
+	.career-header {
+	text-align: center;
+	}
+	
+	.career-header .preview-container .grid {
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	}
+	.career-header .content-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	color: #FFF;
+	margin-top: 150px;
+	text-align: center;
+	text-shadow: 0 0 5px rgba(1, 1, 1, 0.5);
+	}
+
+	#play-video {
+	display: block;
+	cursor: pointer;
+	width: 150px;
+	height: 150px;
+	padding: 20px;
+	display: inline-block;
+	position: relative;
+	z-index: 111;
+	transition: all 0.1s ease-in-out;
+	transform: scale(0.85);
+	-webkit-transform: scale(0.85);
+	-moz-transform: scale(0.85);
+	-ms-transform: scale(0.85);
+	-o-transform: scale(0.85);
+	transform: scale(0.85);
+	}

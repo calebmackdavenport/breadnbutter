@@ -20,9 +20,8 @@ angular.module('BreadNButter.directives', [])
             });
         }
     };
-});
+})
 
-angular.module('BreadNButter.directives', [])
 .directive('mainNav', [function() {
 	return {
 		templateUrl: 'directives/navbar.html',
@@ -30,5 +29,24 @@ angular.module('BreadNButter.directives', [])
 		scope: {
 			activePage: '=' // shorthand for 
 		}
+	};
+}])
+
+.directive('searchToggle', [function() {
+	return {
+		restrict: 'A', 
+		link: function(scope, element) {
+
+            $scope.firstVal = $scope.searchbox1.val();
+            $scope.secondVal = $scope.searchbox2.val();
+
+            $scope.showBox = function(value) {
+                if (value.length > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
 	};
 }])
