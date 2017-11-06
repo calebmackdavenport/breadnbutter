@@ -37,7 +37,7 @@ app.get('/api/ingredients', function(req, res) {
     request(url, function (error:any, response:any, body:any) {
         if (!error && response.statusCode == 200) {
             res.send(body);
-            console.log("test2");
+            console.log("test22");
         }
         else {
             res.status(404);

@@ -1,24 +1,29 @@
 angular.module('BreadNButter.factories', [])
-.factory('Recipes', ['$resource', function($resource) {
-    return $resource('/api/ingredients/:id', { id: '@id' }, {
-        queryByIngredient: {
-            method: 'GET',
-            url: '/api/recipes/ingredient/:ingredientName',
-            
-            isArray: true
-        }
-    });
-}])
+//controller for searching by ingredients from search bar
+ //currently returns array of 30 recipes
+ .factory('ContactForm', ['$resource', function($resource) {
+    return $resource('/api/contactforms/:id', { id: '@id' });
+ }])
+ 
 .factory('Ingredients', ['$resource', function($resource) {
     return $resource('/api/ingredients/:id', { id: '@id' });
 }])
-// .factory("Ingredients", function ($resource) {
-//     return $resource(
-//         "/api/ingredients/:id",
-//         {   Id: "@Id" },
-//         {
-//             // "update": {method: "PUT"},
-//             // "reviews": {'method': 'GET', 'params': {'reviews_only': "true"}, isArray: true}
-//         }
-//     );
-// });
+
+//controller for searching by recipe id (single recipe factory)
+.factory('RecipeIngredients', ['$resource', function($resource) {
+    return $resource('/api/recipes/:id', { id: '@id' });
+}])
+
+//controllers for individual pieces of Recipe
+.factory('RecipeTitle', ['$resource', function($resource) {
+    return $resource('/api/recipes/title/:id', { id: '@id' });
+}])
+.factory('RecipeSource', ['$resource', function($resource) {
+    return $resource('/api/recipes/source_url/:id', { id: '@id' });
+}])
+.factory('RecipeImage', ['$resource', function($resource) {
+    return $resource('/api/recipes/image_url/:id', { id: '@id' });
+}])
+.factory('RecipeID', ['$resource', function($resource) {
+    return $resource('/api/recipes/recipe_id/:id', { id: '@id' });
+}])

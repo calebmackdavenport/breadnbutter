@@ -1,8 +1,11 @@
-<div id="container" ng-click="searchMore()">
-    <a id="searchresults"></a>
-        <div ng-repeat="x in recipe">
-            <h2> {{ x.title }}</h2>
-            <h5> {{ x.publisher }}</h5>
-            <img ng-src="{{x.image_url}}" alt="">
-        </div>
+<div id="container">
+    <div ng-repeat="x in recipe">
+        <a id="searchresults" ng-click="singleView($event)" data="{{x.recipe_id}}">
+            <div id="{{x.recipe_id}}" ng-model="id">
+                <h2> {{ x.title }}</h2>
+                <h5> {{ x.publisher }}</h5>
+                <img ng-src="{{x.image_url}}" alt="">
+            </div>
+        </a>
+    </div>
 </div>

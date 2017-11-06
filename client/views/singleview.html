@@ -1,0 +1,38 @@
+<div id="container">
+        <a id="singleview"></a>
+            <div ng-model="singlerecipe">
+                <h2>{{ r.title }}</h2>
+                <img ng-src="{{r.image_url}}" alt="">
+
+
+                <div>
+                <h5> Ingredients: <br> </h5>
+                <div ng-model='i0' id='i0'>{{r.ingredients[0]}}</div>
+                <div ng-model='i1' id='i1'>{{r.ingredients[1]}}</div>
+                <div ng-model='i2' id='i2'>{{r.ingredients[2]}}</div>
+                <div ng-model='i3' id='i3'>{{r.ingredients[3]}}</div>
+                <div ng-model='i4' id='i4'>{{r.ingredients[4]}}</div>
+                <div ng-model='i5' id='i5'>{{r.ingredients[5]}}</div>
+                <div ng-model='i6' id='i6'>{{r.ingredients[6]}}</div>
+                <div ng-model='i7' id='i7'>{{r.ingredients[7]}}</div>
+                <div ng-model='i8' id='i8'>{{r.ingredients[8]}}</div>
+                <div ng-model='i9' id='i9'>{{r.ingredients[9]}}</div>
+                <div ng-model='i10' id='i10'>{{r.ingredients[10]}}</div>
+                <div ng-model='i11' id='i11'>{{r.ingredients[11]}}</div>
+                <div ng-model='i12' id='i12'>{{r.ingredients[12]}}</div>
+                <div ng-model='i13' id='i13'>{{r.ingredients[13]}}</div>
+                <div ng-model='i14' id='i14'>{{r.ingredients[14]}}</div>
+                <div ng-model='i15' id='i15'>{{r.ingredients[15]}}</div>
+                <div ng-model='i16' id='i16'>{{r.ingredients[16]}}</div>
+                <div ng-model='i17' id='i17'>{{r.ingredients[17]}}</div>
+                <div ng-model='i18' id='i18'>{{r.ingredients[18]}}</div>
+                <div ng-model='i19' id='i19'>{{r.ingredients[19]}}</div>
+                </div>
+
+                <button ng-click="addIngredients()">Add To Cart</button>
+
+                <a href="{{r.source_url}}">See Directions</a>
+            </div>
+
+    </div>
+    
