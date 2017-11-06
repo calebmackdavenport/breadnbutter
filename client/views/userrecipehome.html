@@ -1,0 +1,78 @@
+<br>
+<br>
+
+<div class="jumbotron jumbotron-billboard">
+    <div class="userportal"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="aboutusheading">Member recipe portal</h1>
+                <p class="contactuslead">Have a great recipe idea to share with other members?</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row" id="userportal">
+    <div class="col-7">
+        <p align="center">What other members have shared.</p>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active" id="carousel-item-size">
+                    <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1453831362806-3d5577f014a4?auto=format&fit=crop&w=1338&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
+                        alt="First slide">
+                    <h5 align="center">Fried Rice - Added by John</h5>
+                </div>
+                <div class="carousel-item" id="carousel-item-size">
+                    <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
+                        alt="Second slide">
+                    <h5 align="center">Assorted fruits - Added by Mary</h5>
+                </div>
+                <!-- <div class="carousel-item" id="carousel-item-size">
+                    <img class="d-block img-fluid" src="..." alt="Third slide">
+                  </div> -->
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+        </div>
+        <a href="/alluserrecipes">View more like this...</a>
+    </div>
+
+    <div class="col-5">
+        <br>
+        <br>
+        <br>
+
+        <h4>Please login to add your recipe</h4>
+        <form ng-submit="login()">
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputlogin" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputlogin" placeholder="Password">
+                </div>
+            </div>
+
+        </form>
+
+        <br>
+        <a class="btn btn-info" href="/addrecipe" role="button">Add your recipe</a>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
