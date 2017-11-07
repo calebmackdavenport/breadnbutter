@@ -1,44 +1,43 @@
 
 /* Search Bar Styles */
 #search-message {
-	margin-top: 100px;
-	margin-bottom: -10px;
-	margin-left: -110px;
-	font-size: 60px;
+	margin-top: 7rem;
+	margin-bottom: -.8rem;
+	margin-left: -7rem;
+	font-size: 4rem;
 }
 
-
 #custom-search-input {
-	margin:0;
-	margin-top: 10px;
+	margin: 0;
+	margin-top: .8rem;
 	padding: 0;
 }
 
 #custom-search-input p {
-	margin-left: -120px; 
-	letter-spacing: 2px;
+	margin-left: -7.5rem; 
+	letter-spacing: .125rem;
 }
 
 #custom-search-input .search-query {
-	margin-top: 5px;
-	margin-left: 320px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 10px;
+	margin-top: .3rem;
+	margin-left: 20rem;
+	-webkit-border-radius: .18rem;
+	-moz-border-radius: .18rem;
+	border-radius: .62rem;
 	color: white;
 	opacity: 0.6;
-	width: 700px;
-	height: 70px;
+	width: 44rem;
+	height: 4.4rem;
 	color: black;
-	font-size: 45px;
+	font-size: 2.8rem;
 }
 
 .search-btn {
-	padding: 5px;
-	width: 300px;
-	font-size: 25px;
-	margin-top: 10px;
-	margin-left: -130px;
+	padding: .31rem;
+	width: 19rem;
+	font-size: 1.5rem;
+	margin-top: .625rem;
+	margin-left: -8rem;
 	background-color: #7c0000;
 	border: 1px solid #7c0000;;
 	color: white;
@@ -58,19 +57,19 @@
 
 /* Homepage Recipes Styles */
 #rotd {
-	margin-bottom: 40px;
+	margin-bottom: 2.5rem;
 }
 
 .rotd-container {
-	margin-top: 40px;
+	margin-top: 2.5rem;
 }
 
 #rotd-img {
-	width: 300px;
-	height: 300px;
+	width: 19rem;
+	height: 19rem;
 	float: left;
-	margin-right: 15px;
-	margin-bottom: 25px;
+	margin-right: .95rem;
+	margin-bottom: 1.5rem;
 }
 
 #rotd-title {
