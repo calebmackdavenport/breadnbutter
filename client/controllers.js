@@ -32,10 +32,11 @@ angular.module('BreadNButter.controllers', [])
     Smooth.scrollTo('bottom');
   });
 
-  // $location.hash('bottom');
-  // $timeout(function() {
-  //   Smooth.scrollTo('bottom'); }, 500);
-    //TODO fix this
+
+  //generate random integer between 1000 and 9000
+  //currently viewing 30 of 1000
+
+
   $scope.searchMore = function() {
     //only works if &page= exists at the end of window.location.pathname, which it always should
       let path = window.location.pathname;
@@ -51,6 +52,7 @@ angular.module('BreadNButter.controllers', [])
   }
 
   $scope.singleView = function(e) {
+    console.log(e);
     $location.path('/recipe/' + e.target.parentNode.id);
   }
     
