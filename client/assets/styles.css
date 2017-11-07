@@ -1,9 +1,8 @@
-
 /* Search Bar Styles */
 #search-message {
 	margin-top: 7rem;
 	margin-bottom: -.8rem;
-	margin-left: -7rem;
+	margin-left: -6rem;
 	font-size: 4rem;
 }
 
@@ -20,7 +19,7 @@
 
 #custom-search-input .search-query {
 	margin-top: .3rem;
-	margin-left: 20rem;
+	margin-left: 21rem;
 	-webkit-border-radius: .18rem;
 	-moz-border-radius: .18rem;
 	border-radius: .62rem;
@@ -37,7 +36,7 @@
 	width: 19rem;
 	font-size: 1.5rem;
 	margin-top: .625rem;
-	margin-left: -8rem;
+	margin-left: -7.5rem;
 	background-color: #7c0000;
 	border: 1px solid #7c0000;;
 	color: white;
@@ -73,7 +72,7 @@
 }
 
 #rotd-title {
-	margin-bottom: 10px;
+	margin-bottom: .625rem;
 	font-weight: bold;
 }
 
@@ -91,33 +90,33 @@
 }
 
 .recipe-container {
-	margin-bottom: 30px;
+	margin-bottom: 1.8rem;
 }
 
 #week-header {
 	text-align: center;
 	font-weight: bold;
-	font-size: 46px;
-	margin-bottom: -3px;
+	font-size: 2.8rem;
+	margin-bottom: -.18rem;
 }
 
 #week-title {
 	font-weight: bold;
-	margin-top: 10px;
-	margin-bottom: 5px;
+	margin-top: 0.625rem;
+	margin-bottom: 0.3125em;
 }
 
 #week-caption {
 	text-align: center;
-	font-size: 15px;
-	margin-bottom: 45px;
+	font-size: .93rem;
+	margin-bottom: 2.8rem;
 }
 
 #week-img {
-	height: 200px;
-	width: 200px;
+	height: 12.5rem;
+	width: 12.5rem;
 	float: left;
-	margin-right: 10px;
+	margin-right: 0.625em;
 }
 
 hr {
@@ -131,8 +130,8 @@ hr {
 
 #logo {
 	font-family: Montserrat, sans-serif;
-	letter-spacing: 3px;
-	font-size: 20px;
+	letter-spacing:  0.18rem;
+	font-size: 1.25rem;
 }
 
 .custom-toggler.navbar-toggler {
@@ -181,25 +180,25 @@ hr {
     background-size: cover;
     overflow: hidden;
     position:absolute;
-    top:0;left:0;
+    top:0; left:0;
     z-index:1;
 }
 
 .jumbotron {
-    position:relative;
-    padding:50px;
+    position: relative;
+    padding: 3.125rem;
 }
 .jumbotron .container {
-    z-index:2;
+    z-index: 2;
     position:relative;
-    z-index:2;
+    z-index: 2;
 }
 
 .addheading{
     text-align: center;
     size: 15;
     font-weight: bold;
-	font-size: 90px;
+	font-size: 5.6rem;
 	color: white;
 }
 
@@ -213,7 +212,7 @@ hr {
 }
 
 .jumbotron-billboard .aboutus {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     opacity: 0.9;
     color: #fff;
     background: url("https://images.unsplash.com/photo-1497534547324-0ebb3f052e88?auto=format&fit=crop&w=1290&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center center;
@@ -222,7 +221,7 @@ hr {
     background-size: cover;
     overflow: hidden;
     position:absolute;
-    top:0;left:0;
+    top:0; left:0;
 	z-index:1;
 
 }
@@ -232,7 +231,7 @@ hr {
     text-align: center;
     size: 15;
     font-weight: bold;
-    font-size: 90px;
+    font-size: 5.6rem;
 }
 
 .jumbotron-billboard .contactus {
@@ -253,7 +252,7 @@ hr {
     text-align: center;
     size: 15;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 1.8rem;
     color: white;
 }
 
@@ -298,51 +297,51 @@ hr {
 /* Single View Styles */
 
 #single-recipe-title {
-	margin-top: 100px;
-	margin-bottom: 10px;
-	margin-left: -100px;
+	margin-top: 6.25rem;
+	margin-bottom: 0.625em;
+	margin-left: -6.25rem;
 	text-align: center;
-	font-size: 35px;
+	font-size: 2.18rem;
 	font-weight: bold;
 }
 
 #single-recipe-img {
 	float: left;
-	margin-right: 30px;
-	margin-bottom: 30px;
+	margin-right: 1.875rem;
+	margin-bottom: 1.875rem;
 }
 
 .recipe-description {
-	margin-bottom: 100px;
+	margin-bottom: 6.25rem;
 }
 
 #single-recipe-caption {
 	text-align: center;
-	font-size: 15px;
-	margin-bottom: 45px;
-	margin-left: -90px;
+	font-size: 0.93rem;
+	margin-bottom: 2.8rem;
+	margin-left: -5.6rem;
 }
 
 .ingredients-container, .directions-container {
-	margin-top: 60px;
-	margin-bottom: 30px;
+	margin-top: 3.75rem;
+	margin-bottom: 1.875rem;
 }
 
 .single-subtitle {
-	font-size: 35px;
+	font-size: 2.18rem;
 }
 
 .circle {
 	background-color: #7c0000;
 	border-radius: 50%;
-	height: 35px;
-	width: 35px;
+	height: 2.18rem;
+	width: 2.18rem;
 	font-weight: bold;
 	text-align: center;
-	line-height: 35px;
+	line-height: 2.18rem;
 	color: white;
 	font-size: 1em;
-	margin-right: 10px;
+	margin-right: 0.625em;
 	float: left;
 }
 
@@ -373,7 +372,7 @@ hr {
     width: 42px;
     height: 42px;
     background-image: url(http://images.media-allrecipes.com/ar-images/sprites/recipe_directions_icons_031115.svg);
-    background-position: -10px -222px;
+    background-position: -0.625em -222px;
     background-repeat: no-repeat;
 	display: block;
 }
