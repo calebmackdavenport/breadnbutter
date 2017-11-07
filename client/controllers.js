@@ -236,7 +236,8 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
     let contact = new ContactForm({
       from: $scope.email,
       subject: $scope.subject,
-      message: $scope.message
+      message: $scope.message,
+      name: $scope.name
     });
  
     contact.$save(function(){

@@ -36,23 +36,23 @@
                 <form ng-submit="send()">
 
                     <div id="contactusform">
-                        <label for="title">Name: </label>
-                        <input type="text" id="nameinput" class="form-control" placeholder="Your name" />
+                        <label for="name">Name: </label>
+                        <input type="text" id="name" class="form-control" placeholder="Your name" ng-model="name" />
                     </div>
 
                     <div id="contactusform">
-                        <label for="title">Email: </label>
-                        <input type="text" id="emailinput" class="form-control" placeholder="Your email address" />
+                        <label for="email">Email: </label>
+                        <input type="email" id="email" class="form-control" placeholder="Your email address" ng-model="email" />
                     </div>
 
                     <div id="contactusform">
-                        <label for="title">Subject: </label>
-                        <input type="text" id="emailinput" class="form-control" placeholder="Subject" />
+                        <label for="subject">Subject: </label>
+                        <input type="text" id="subject" class="form-control" placeholder="Subject" ng-model="subject" />
                     </div>
 
                     <div id="contactusform">
-                        <label for="title">Message: </label>
-                        <textarea type="text" id="emailinput" class="form-control" rows="3" placeholder="Your message"></textarea>
+                        <label for="message">Message: </label>
+                        <textarea type="text" id="message" class="form-control" rows="3" placeholder="Your message" ng-model="message"></textarea>
                     </div>
 
                     <br>
