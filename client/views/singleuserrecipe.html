@@ -1,11 +1,19 @@
-<br><br><br>
-<h5>This is where the single user recipe will be displayed.</h5>
-
-
+<main-nav></main-nav>
 
 <div id="recipe-container">
     <div class="recipe-list">
-        <h2>{{ recipe.title }}</h2>
-
+        <h2>{{ userRecipe.name }}</h2>
+        <h6>By: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname }}</h6>
+        <br>
+        <p>Cook time: <br> {{ userRecipe.cooktime}}</p>
+        <p>Prep time: <br> {{ userRecipe.preptime}}</p>
+        <p>Serving Size: <br> {{ userRecipe.servingsize}}</p>
+        <p>Serving Yield: <br> {{ userRecipe.servingyield}}</p>
+        <p>Ingredients: <br> {{ userRecipe.ingredients}}</p>
+        <p>Directions: <br> {{ userRecipe.directions}}</p>
+        <p>Additional Info: <br> {{ userRecipe.additionalinfo}}</p>
+        
+        <button type="button" class="btn view-btn" ng-click="deleteRecipe()">Delete</button>
     </div>
 </div>
+<br>

@@ -1,3 +1,4 @@
+
 angular.module('BreadNButter.controllers', [])
 .controller('MainController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
 
@@ -32,11 +33,10 @@ angular.module('BreadNButter.controllers', [])
     Smooth.scrollTo('bottom');
   });
 
-
-  //generate random integer between 1000 and 9000
-  //currently viewing 30 of 1000
-
-
+  // $location.hash('bottom');
+  // $timeout(function() {
+  //   Smooth.scrollTo('bottom'); }, 500);
+    //TODO fix this
   $scope.searchMore = function() {
     //only works if &page= exists at the end of window.location.pathname, which it always should
       let path = window.location.pathname;
@@ -52,7 +52,6 @@ angular.module('BreadNButter.controllers', [])
   }
 
   $scope.singleView = function(e) {
-    console.log(e);
     $location.path('/recipe/' + e.target.parentNode.id);
   }
     
@@ -231,4 +230,49 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
     });
   }
  }])
-  
+ 
+ //for all recipes from our users
+ .controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {
+    $scope.userRecipes = userRecipe.query();
+    $scope.users = User.query();
+ }])
+ 
+ //for single recipe from our users
+ .controller('UserRecipeController', ['$scope', 'userRecipe', 'User', '$location', '$routeParams', function ($scope, userRecipe, User, $location, $routeParams) {
+  $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
+  $scope.user = User.query();
+ 
+  $scope.deleteRecipe = function () {
+ 
+ }
+ 
+ }])
+ 
+ .controller('AddRecipeController', ['$scope', 'userRecipe', 'User', '$location', function ($scope, userRecipe, User, $location) {
+  $scope.users = User.query();
+ 
+  $scope.save = function () {
+      let r = new userRecipe({
+        userid: 1,
+          name: $scope.name,
+          preptime: $scope.preptime,
+          cooktime: $scope.cooktime,
+          servingsize: $scope.servingsize,
+          directions: $scope.directions,
+          additionalinfo: $scope.additionalinfo,
+          servingyield: $scope.servingyield,
+          ingredients: $scope.ingredients
+      });
+      console.log(r);
+ 
+      r.$save(function (success) {
+          $location.path('/');
+      }, function (err) {
+          console.log(err);
+      });
+    }
+ 
+    $scope.cancel = function() {
+      $location.path('/');
+    }
+ }])
