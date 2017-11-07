@@ -1,28 +1,34 @@
 angular.module('BreadNButter.controllers', [])
+.controller('MainController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
+
+}])
 .controller('WelcomeController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
   //TODO: search bar functionality
   //TODO: login/UserService control
 
   $scope.search = function() {
-    // let searchlength = $scope.searchbox1;
-    // console.log(searchlength.length);
-    if ( true ){
-    $timeout(function () {
-    $location.path('/search/' + $scope.searchbox1 + "&page=1"); // + ", " + $scope.searchbox2
+    $location.path('/search/' + $scope.searchbox1 + "&page=1");
     $location.hash('bottom');
-    Smooth.scrollTo('bottom'); }, 600);
-    }
+
+    // if($scope.searchbox1.length < 11) {
+    // $timeout(function() {
+    //   Smooth.scrollTo('bottom'); }, 500);
+    //   }
+    // else if ($scope.searchbox1.length > 11 && $scope.searchbox1.length < 19) {
+    //   $timeout(function() {
+    //     Smooth.scrollTo('bottom'); }, 1000);
+    //   }
+    // else {
+    //   $timeout(function() {
+    //     Smooth.scrollTo('bottom'); }, 1500);
+    //   }
+    
   }
+  
 
   if (localStorage.items === undefined)
     localStorage.items = angular.toJson([]);
   $scope.list = angular.fromJson(localStorage.items);
-  // could repurpose total controller for mutliple similar items to modify quantity
-  // let total = 0;
-  // for (let i = 0; i < $scope.list.length; i++) {
-  //   total += $scope.list[i].price;
-  // }
-  // $scope.total = total
   $scope.removeItem = function (i) {
     let index = $scope.list.indexOf(i)
     if (index > -1) {
@@ -37,28 +43,33 @@ angular.module('BreadNButter.controllers', [])
   }
 }])
 .controller('SearchResultsController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
-  $scope.recipe = Ingredients.query({ id: $routeParams.id }, {id: "array"});
+  $scope.recipe = Ingredients.query({ id: $routeParams.id }, function() {
+    Smooth.scrollTo('bottom');
+  });
 
+  // $location.hash('bottom');
+  // $timeout(function() {
+  //   Smooth.scrollTo('bottom'); }, 500);
     //TODO fix this
   $scope.searchMore = function() {
-      //TODO setup functionality to get to page 3+
-      //TODO IF ELSE where # of times functions has been called is > 1
-    // $location.path(location.pathname + '&page=2');
-    let clicks = 1;
-    $timeout(function () {
-      let clicks = 1;
-      $location.path(location.pathname + '&page=' + (1 + clicks));
+    //only works if &page= exists at the end of window.location.pathname, which it always should
+      let path = window.location.pathname;
+      let pageNum = path[path.length - 1];
+      let newPageNum = parseInt(pageNum) + 1;
+      path = path.slice(0, -1);
+      path = path + (newPageNum);
+      // console.log(path);
+      $location.path(path);
       $location.hash('bottom');
-      Smooth.scrollTo('bottom'); }, 750);
-
-      clicks++;
+      $timeout(function() {
+        Smooth.scrollTo('bottom'); }, 500);
   }
 
   $scope.singleView = function(e) {
     $location.path('/recipe/' + e.target.parentNode.id);
-    $timeout(function() {
-      Smooth.scrollTo('bottom');
-    }, 500);
+    // $timeout(function() {
+    //   Smooth.scrollTo('bottom');
+    // }, 500);
   }
     
 }])
@@ -121,12 +132,6 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
               }
             }
             exportList.unshift("Your grocery list provided by Bread & Butter");
-
-      // var fs = require('fs');
-      // var file = fs.createWriteStream('array.txt');
-      // file.on('error', function(err) { /* error handling */ });
-      // exportList.forEach(function(v) { file.write(v.join(', ') + '\n'); });
-      // file.end();
       var textFile = null,
       makeTextFile = function (text) {
         var data = new Blob([text], {type: 'text/plain'});
