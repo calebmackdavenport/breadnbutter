@@ -12,12 +12,12 @@ declare namespace models {
         additionalinfo: string;
     }
 
-   interface IUser {
+    interface IUser {
         id: number;
         firstname: string;
         lastname: string;
         email: string;
-        password: string;
+        password: string; 
         role: string;
     }
 
