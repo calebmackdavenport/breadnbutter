@@ -241,4 +241,49 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
     });
   }
  }])
-  
+
+//for all recipes from our users
+.controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {
+    $scope.userRecipes = userRecipe.query();
+    $scope.users = User.query();
+}])
+
+//for single recipe from our users
+.controller('UserRecipeController', ['$scope', 'userRecipe', 'User', '$location', '$routeParams', function ($scope, userRecipe, User, $location, $routeParams) {
+  $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
+  $scope.user = User.query();
+
+  $scope.deleteRecipe = function () {
+
+}
+
+}])
+
+.controller('AddRecipeController', ['$scope', 'userRecipe', 'User', '$location', function ($scope, userRecipe, User, $location) {
+  $scope.users = User.query();
+
+  $scope.save = function () {
+      let r = new userRecipe({
+        userid: 1, 
+          name: $scope.name,
+          preptime: $scope.preptime,
+          cooktime: $scope.cooktime,
+          servingsize: $scope.servingsize,
+          directions: $scope.directions,
+          additionalinfo: $scope.additionalinfo,
+          servingyield: $scope.servingyield,
+          ingredients: $scope.ingredients
+      });
+      console.log(r);
+
+      r.$save(function (success) {
+          $location.path('/');
+      }, function (err) {
+          console.log(err);
+      });
+    }
+
+    $scope.cancel = function() {
+      $location.path('/');
+    }
+}])

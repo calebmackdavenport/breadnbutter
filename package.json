@@ -8,9 +8,10 @@
   },
   "main": "server/index.js",
   "scripts": {
+    "test": "source variables && npm run dev",
     "build:ts": "tsc -p .",
     "server": "node server/index.js",
-    "test": "nodemon -e ts --dir server/ --exec \"npm run build:ts && npm run server\"",
+    "dev": "nodemon -e ts --dir server/ --exec \"npm run start\"",
     "start": "npm run build:ts && npm run server"
   },
   "author": "",

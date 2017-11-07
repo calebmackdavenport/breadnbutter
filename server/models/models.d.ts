@@ -1,14 +1,24 @@
 declare namespace models {
     interface IRecipe {
         id: number;
-        title: string;
-       
-        //TODO: Add the table field names
-
-
-    }
-    interface IUser {
-        id: number;
+        userid: number;
         name: string;
+        prepTime: number;
+        cookTime: number;
+        servingsize: number;
+        servingyield: string;
+        ingredients: string;
+        directions: string;
+        additionalinfo: string;
     }
+
+   interface IUser {
+        id: number;
+        firstname: string;
+        lastname: string;
+        email: string;
+        password: string;
+        role: string;
+    }
+
 }
