@@ -1,19 +1,20 @@
-// import * as sendgrid from 'sendgrid';
-// const helper = sendgrid.mail;
-// const sg = sendgrid(process.env.SENDGRID_API_KEY || '');
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
 
-// export function sendEmail(to: string, from: string, subject: string, message: string) {
-//     let toEmail = new helper.Email(to);
-//     let fromEmail = new helper.Email(from);
-//     let emailContent = new helper.Content('text/html', message);
+export function sendEmail(to: string, from: string, subject: string, message: string, fromName: string) {
 
-//     let mail = new helper.Mail(fromEmail, subject, toEmail, emailContent);
+    let mail = {
+        to: [{name: "Stinson Lyon", email: "stinson.lyon@gmail.com"},
+            {name: "Emily Dull", email: "emilysharp32@gmail.com"},
+            {name: "Caleb Davenport", email:"xcmdprompt@gmail.com"},
+            {name: "Anil Joshi", email:"anil.joc1@gmail.com"}
+        ],
+        from: { name: fromName, email: from } ,
+        subject: subject,
+        text: message,
+        html: message
+    }
 
-//     let request = sg.emptyRequest({
-//         method:'POST',
-//         path:'v3/mail/send',
-//         body: mail.toJSON()
-//     });
 
-//     return sg.API(request)
-// }
+    return sgMail.send(mail);
+}
