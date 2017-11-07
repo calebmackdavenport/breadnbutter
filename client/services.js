@@ -11,7 +11,7 @@ angular.module('BreadNButter.services', [])
                     return;
                 }
                 var speed = Math.round(distance / 100);
-                if (speed >= 5) speed = 52;
+                if (speed >= 5) speed = 25;
                 var step = Math.round(distance / 25);
                 var leapY = stopY > startY ? startY + step : startY - step;
                 var timer = 0;
