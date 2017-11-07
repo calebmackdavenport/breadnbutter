@@ -10,12 +10,13 @@
   "scripts": {
     "build:ts": "tsc -p .",
     "server": "node server/index.js",
-    "test": "nodemon -e ts --dir server/ --exec \"npm run build:ts && npm run server\"",
+    "test": "source variables && nodemon -e ts --dir server/ --exec \"npm run build:ts && npm run server\"",
     "start": "npm run build:ts && npm run server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^6.1.4",
     "@types/cookie-parser": "^1.4.1",
     "@types/express": "^4.0.39",
     "@types/mysql": "^2.15.0",
@@ -26,7 +27,6 @@
     "mysql": "^2.15.0",
     "nodemon": "^1.12.1",
     "request": "^2.83.0",
-    "sendgrid": "^5.2.3",
     "typescript": "^2.5.3",
     "underscore": "^1.8.3"
   }
