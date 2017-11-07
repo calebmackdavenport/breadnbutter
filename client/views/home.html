@@ -10,10 +10,6 @@
 						<form ng-submit="search()" ng-controller="WelcomeController">
 							<input type="text" class="search-query form-control" ng-model='searchbox1' id="firstSearch" placeholder="Enter your ingredients..."
 							/>
-							<input type="text" class="search-query form-control" ng-model='searchbox2' ng-show='showBox(firstVal)' id="secondSearch" placeholder="Enter another if you'd like"
-							/>
-							<input type="text" class="search-query form-control" ng-model='searchbox3' ng-show='showBox(secondVal)' id="thirdSearch" placeholder="Anything else?"
-							/>
 							<p>(ex: cheese, bread, garlic)</p>
 							<button type="submit" ng-submit="search()" class="btn search-btn">What should I make?</button>
 						</form>

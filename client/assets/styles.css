@@ -1,3 +1,4 @@
+
 /* Search Bar Styles */
 #search-message {
 	margin-top: 100px;
@@ -38,14 +39,14 @@
 	font-size: 25px;
 	margin-top: 10px;
 	margin-left: -130px;
-	background-color: rgb(124, 0, 0);
-	border: 1px solid rgb(124, 0, 0);;
+	background-color: #7c0000;
+	border: 1px solid #7c0000;;
 	color: white;
 }
 
 .search-btn:hover {
-	background-color: rgba(255, 255, 255, 0);
-	color: rgb(124, 0, 0);
+	background-color: hsla(0, 0%, 100%, 0);
+	color: #7c0000;
 	border: 1px solid white;
 	color: white;
 }
@@ -79,15 +80,15 @@
 
 
 .view-btn {
-	background-color: rgb(124, 0, 0);
-	border: 1px solid rgb(124, 0, 0);;
+	background-color: #7c0000;
+	border: 1px solid #7c0000;;
 	color: white;
 }
 
 .view-btn:hover {
 	background-color: white;
-	color: rgb(124, 0, 0);
-	border: 1px solid rgb(124, 0, 0);;
+	color: #7c0000;
+	border: 1px solid #7c0000;;
 }
 
 .recipe-container {
@@ -308,7 +309,8 @@ hr {
 
 #single-recipe-img {
 	float: left;
-	margin-right: 20px;
+	margin-right: 30px;
+	margin-bottom: 30px;
 }
 
 .recipe-description {
@@ -322,8 +324,71 @@ hr {
 	margin-left: -90px;
 }
 
-.ingredients-container {
+.ingredients-container, .directions-container {
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+
+.single-subtitle {
+	font-size: 35px;
+}
+
+.circle {
+	background-color: #7c0000;
+	border-radius: 50%;
+	height: 35px;
+	width: 35px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 35px;
+	color: white;
+	font-size: 1em;
+	margin-right: 10px;
+	float: left;
+}
+
+.vertical-line {
+	border-right: 1px solid black;
+  }
+  
+.prepTime {
+	clear: both;
+	float: left;
+	width: 90%;
+	margin: .8rem 5% 1rem 0;
+	list-style: none;
+}
+
+.prepTime__item {
+    float: left;
+    width: 80px;
+    text-align: center;
+    line-height: .7rem;
+    padding: 0 .25rem;
+    border-right: solid 1px #5f5f5f;
+	color: rgb(32, 32, 32);
+	margin-bottom: 1rem;
+}
+
+.icon--stats-clock {
+    width: 42px;
+    height: 42px;
+    background-image: url(http://images.media-allrecipes.com/ar-images/sprites/recipe_directions_icons_031115.svg);
+    background-position: -10px -222px;
+    background-repeat: no-repeat;
 	display: block;
+}
+
+.prepTime__item:first-child {
+    border-right: 0;
+    width: 42px;
+    padding: 0;
+	margin-right: 5px;
+	margin-left: -20px;
+}
+
+.prepTime__item:last-child {
+	border-right: 0;
 }
 
 /* Testing */
