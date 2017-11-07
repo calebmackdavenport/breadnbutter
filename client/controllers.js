@@ -8,21 +8,6 @@ angular.module('BreadNButter.controllers', [])
 
   $scope.search = function() {
     $location.path('/search/' + $scope.searchbox1 + "&page=1");
-    $location.hash('bottom');
-
-    // if($scope.searchbox1.length < 11) {
-    // $timeout(function() {
-    //   Smooth.scrollTo('bottom'); }, 500);
-    //   }
-    // else if ($scope.searchbox1.length > 11 && $scope.searchbox1.length < 19) {
-    //   $timeout(function() {
-    //     Smooth.scrollTo('bottom'); }, 1000);
-    //   }
-    // else {
-    //   $timeout(function() {
-    //     Smooth.scrollTo('bottom'); }, 1500);
-    //   }
-    
   }
   
 
@@ -31,12 +16,12 @@ angular.module('BreadNButter.controllers', [])
   $scope.list = angular.fromJson(localStorage.items);
   $scope.removeItem = function (i) {
     let index = $scope.list.indexOf(i)
-    if (index > -1) {
-      $scope.list.splice(index, 1);
-    }
+      if (index > -1) {
+        $scope.list.splice(index, 1);
+      }
     localStorage.items = angular.toJson($scope.list);
     $rootScope.$broadcast("listChanged");
-  }
+    }
 
   $scope.goToSingle = function() {
     $location.path('/recipe/:id');
@@ -67,16 +52,13 @@ angular.module('BreadNButter.controllers', [])
 
   $scope.singleView = function(e) {
     $location.path('/recipe/' + e.target.parentNode.id);
-    // $timeout(function() {
-    //   Smooth.scrollTo('bottom');
-    // }, 500);
   }
     
 }])
 .controller('SinglePageController', ['$rootScope', '$timeout', '$scope', '$location', '$routeParams','RecipeIngredients', 
 function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredients) {
   //TODO: export ingredients on single page to Notes
-  $scope.r = RecipeIngredients.get({ id: $routeParams.id }, {id: "array"});
+  $scope.r = RecipeIngredients.get({ id: $routeParams.id });
   console.log($scope.r);
 
   $timeout(function() {
