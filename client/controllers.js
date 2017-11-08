@@ -239,7 +239,6 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
     });
   }
  }])
-<<<<<<< HEAD
  .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
    UserService.me().then((success)=>{
      redirect();
@@ -262,8 +261,6 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
      });
    }
  }])
-  
-=======
  
  //for all recipes from our users
  .controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {
@@ -316,4 +313,3 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
   $scope.recipe = Ingredients.query({ id: pagenum });
 
 }])
->>>>>>> bcd74a947604148d425f2e40690cddea4b39624a
