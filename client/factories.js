@@ -27,15 +27,6 @@ angular.module('BreadNButter.factories', [])
 .factory('RecipeID', ['$resource', function($resource) {
     return $resource('/api/recipes/recipe_id/:id', { id: '@id' });
 }])
-<<<<<<< HEAD
-//Factory for user login
-.factory('User', ['$resource', function($resource) {
-    return $resource('/api/users/:id', {id: '@id'}, {
-        update: {
-            method: 'PUT'
-        }
-    });
-=======
 
 //controllers for our user database
 .factory('User', ['$resource', function($resource) {
@@ -43,5 +34,4 @@ angular.module('BreadNButter.factories', [])
 }])
 .factory('userRecipe', ['$resource', function($resource) {
     return $resource('/api/userrecipes/:id', { id: '@id' });
->>>>>>> bcd74a947604148d425f2e40690cddea4b39624a
 }])
