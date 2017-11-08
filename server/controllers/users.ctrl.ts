@@ -47,7 +47,7 @@ router.get('/', auth.isLoggedIn, (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    procedures.read(req.params.id, req.body.firstname, req.body.lastname)
+    procedures.readByEmail(req.params.id)
     .then((users) => {
         res.send(users);
     }).catch((e) => {
