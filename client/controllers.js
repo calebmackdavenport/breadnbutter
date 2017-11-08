@@ -42,6 +42,7 @@ angular.module('BreadNButter.controllers', [])
     $location.path('/recipe/:id');
   }
 }])
+
 .controller('SearchResultsController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
   $scope.recipe = Ingredients.query({ id: $routeParams.id }, function() {
     Smooth.scrollTo('bottom');

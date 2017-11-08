@@ -1,24 +1,50 @@
-<div class="menu-wrap">
-    <div class="menu-sidebar">
-        <ul class="menu">
-            <h3>Your Grocery List <button ng-click="export(args)" id="cancel-return" class="btn btn-lg" type="submit" value="Export To Notes">Export To CSV</button> <button ng-click="exportText(args)" id="cancel-return" class="btn btn-lg" type="submit" value="Export To Notes">Export To Text</button> </h3>
-                <!-- <button ng-click="export(args)" id="cancel-return" class="btn btn-lg" type="submit" value="Export To Notes">Export To Notes</button> -->
-            <br>
-            <br>
-            <div class="input-group" ng-repeat="ingredient in list">
-                <div class="taco">
-                    <div class="taco">
-                            <button id="cancel-return" class="btn btn-xs" style="margin-top: 0.25em; float: left;"
-                            ng-click="removeItem(ingredient)">Remove</button>
-                        <table>
-                        {{ingredient}}
-                        </table>
-                        
-                    </div>
-                </div>
+<main-nav></main-nav>
+<div class="jumbotron jumbotron-billboard jumbolist">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="groceryheading">Hello, Name!</h1>
             </div>
+        </div>
     </div>
-</div>
-</ul>
-</div>
-</div>
+<div class="container">
+        <div class="grocery-list-top">
+                <span>My Groceries</span>
+        <div class="grocery-list-top-buttons">
+                <button type="button" class="js-email-btn">Email list</button>
+                <button type="button" ng-click="export(args)" id="cancel-return" class="js-email-btn" type="submit" value="Export To Notes">Export To CSV</button>
+                <button type="button" ng-click="exportText(args)" id="cancel-return" class="js-email-btn" type="submit" value="Export To Notes">Export To Text</button>
+              
+        </div>
+        </div>
+
+		<div class="menu-wrap">
+
+            </div>
+							<!-- <button ng-click="export(args)" id="cancel-return" class="btn btn-lg" type="submit" value="Export To Notes">Export To Notes</button> -->
+        <div class="ingredient-container">
+			 <div class="input-group" ng-repeat="ingredient in list">
+							<div class="taco">
+								<div class="taco">
+                                        <button id='removeBtn' ng-click="removeItem(ingredient)">
+                                                <div class='icon'>
+                                                  <i class='fa fa-trash-o'></i>
+                                                </div>
+                                                <div class='text'>
+                                                </div>
+                                              </button>
+									<table>
+									<p id="ingredient-line">{{ingredient}}</p>
+									</table>
+								</div>
+                            </div>
+                            </div>                            
+						</div>
+			</div>
+			</div>
+			
+            
+            
+            
+        </div>
+
+
