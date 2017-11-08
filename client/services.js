@@ -65,7 +65,7 @@ angular.module('BreadNButter.services', [])
 
     this.loginRedirect = function(){
         let current = $location.path();
-        $location.path('/login').search('dest', current);
+        $location.path('/userrecipehome').search('dest', current);
     }
 
     this.login = function(email, password) {
