@@ -21,10 +21,15 @@ router.post('/login', (req,res,next)=>{
                 console.log(err);
                 res.sendStatus(500);
             } else {
+                delete user.password;
                 res.send(user);
             }
         });
     }) (req, res, next);
+});
+
+router.get('/me', (req,res)=>{
+    res.send(req.user);
 });
 
 router.get('/logout', (req, res) => {
@@ -34,30 +39,6 @@ router.get('/logout', (req, res) => {
             res.sendStatus(204);
         });
     }
-});
-
-router.get('/', auth.isLoggedIn, (req, res) => {
-    procedures.all()
-    .then((users) => {
-        res.send(users);
-    }).catch((e) => {
-        console.log(e);
-        res.sendStatus(500);
-    });
-})
-
-router.get('/:id', (req, res) => {
-    procedures.readByEmail(req.params.id)
-    .then((users) => {
-        res.send(users);
-    }).catch((e) => {
-        console.log(e);
-        res.sendStatus(500);
-    });
-});
-
-router.get('/me', (req,res)=>{
-    res.send(req.user);
 });
 
 export default router;

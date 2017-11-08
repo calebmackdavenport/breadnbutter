@@ -12,9 +12,7 @@ export function readByEmail(email: string): Promise<models.IUser> {
     return row('GetUserByEmail', [email]);
 }
 
-export function allrecipesbyuser(userid: number): Promise<models.IUser> {
-    return row('GetAllRecipesByUser', [userid]);
-}
+
 
 
 
