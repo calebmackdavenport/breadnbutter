@@ -28,19 +28,20 @@
 
     <div class="container" id="outof">
         Showing {{count}} of {{outof}}
-    </div>
-
-    <div id="30recipes" ng-repeat="x in recipe">
+	</div>
+	
+    <div id="recipes" ng-repeat="x in recipe">
         <a id="searchresults" ng-click="singleView($event)" data="{{x.recipe_id}}">
-            <div id="{{x.recipe_id}}" ng-model="id">
+            <div id="{{x.recipe_id}}" class="recipe-div" ng-model="id">
                 <h2> {{ x.title }}</h2>
                 <h5> {{ x.publisher }}</h5>
-                <img ng-src="{{x.image_url}}" alt="">
+				<img src="{{x.image_url}}" alt="..." class="img-thumbnail" id="search-img">
+				<button type="button" class="btn view-btn search">VIEW RECIPE</button>
             </div>
         </a>
     </div>
 
-    <button ng-click="searchMore()" type="button" class="btn btn-outline-secondary">See More</button>
+    <button ng-click="searchMore()" type="button" class="btn btn-outline-secondary more-btn">See More</button>
 
 </div>
 </a>
