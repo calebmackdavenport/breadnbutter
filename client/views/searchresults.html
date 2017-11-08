@@ -26,6 +26,10 @@
 <a id="bottom">
 <div class="container" id="searchcontainer">
 
+    <div class="container" id="outof">
+        Showing {{count}} of {{outof}}
+    </div>
+
     <div id="30recipes" ng-repeat="x in recipe">
         <a id="searchresults" ng-click="singleView($event)" data="{{x.recipe_id}}">
             <div id="{{x.recipe_id}}" ng-model="id">

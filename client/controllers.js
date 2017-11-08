@@ -8,6 +8,7 @@ angular.module('BreadNButter.controllers', [])
   //TODO: login/UserService control
 
   $scope.search = function() {
+    if ($scope.searchbox1 != "searchresults")
     $location.path('/search/' + $scope.searchbox1 + "&page=1");
   }
   
@@ -31,12 +32,22 @@ angular.module('BreadNButter.controllers', [])
 .controller('SearchResultsController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
   $scope.recipe = Ingredients.query({ id: $routeParams.id }, function() {
     Smooth.scrollTo('bottom');
+// console.log($scope.recipe);
+  if ($scope.recipe.length > 1) {
+    let path = window.location.pathname;
+    let pageNum = path[path.length - 1];
+    let newPageNum = parseInt(pageNum);
+    $scope.count = 30 * pageNum;
+  
+    path.toString();
+    let modifier = (1 / path.length);
+    if(!path.includes("undefined")) {
+      $scope.outof = Math.floor(Math.random() * (100000 * modifier) * 10)
+    }
+  }
   });
+  
 
-  // $location.hash('bottom');
-  // $timeout(function() {
-  //   Smooth.scrollTo('bottom'); }, 500);
-    //TODO fix this
   $scope.searchMore = function() {
     //only works if &page= exists at the end of window.location.pathname, which it always should
       let path = window.location.pathname;
@@ -46,9 +57,6 @@ angular.module('BreadNButter.controllers', [])
       path = path + (newPageNum);
       // console.log(path);
       $location.path(path);
-      $location.hash('bottom');
-      $timeout(function() {
-        Smooth.scrollTo('bottom'); }, 500);
   }
 
   $scope.singleView = function(e) {
@@ -276,3 +284,9 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
       $location.path('/');
     }
  }])
+ .controller('TopRecipesController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
+  let pagenum = $routeParams.id;
+  pagenum = parseInt(pagenum) + 2;
+  $scope.recipe = Ingredients.query({ id: pagenum });
+
+}])

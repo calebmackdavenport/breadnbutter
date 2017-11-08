@@ -44,7 +44,6 @@ angular.module('BreadNButter',
     })
     .when('/recipe/:id', {
         templateUrl: 'views/single.html',
-        // templateUrl: "./views/singleview.html", /* commented out temporarily */
         controller: "SinglePageController"
     })
     .when('/list', {
@@ -74,6 +73,10 @@ angular.module('BreadNButter',
     .when('/aboutus', {
         templateUrl: "./views/aboutus.html",
         controller: "AboutUsController"
+    })
+    .when('/toprecipes/:id', {
+        templateUrl: "./views/toprecipes.html",
+        controller: "TopRecipesController"
     })
     .otherwise({
         redirectTo: '/'
