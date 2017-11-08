@@ -1,3 +1,4 @@
+
 angular.module('BreadNButter.controllers', [])
 .controller('MainController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
 
@@ -8,21 +9,6 @@ angular.module('BreadNButter.controllers', [])
 
   $scope.search = function() {
     $location.path('/search/' + $scope.searchbox1 + "&page=1");
-    $location.hash('bottom');
-
-    // if($scope.searchbox1.length < 11) {
-    // $timeout(function() {
-    //   Smooth.scrollTo('bottom'); }, 500);
-    //   }
-    // else if ($scope.searchbox1.length > 11 && $scope.searchbox1.length < 19) {
-    //   $timeout(function() {
-    //     Smooth.scrollTo('bottom'); }, 1000);
-    //   }
-    // else {
-    //   $timeout(function() {
-    //     Smooth.scrollTo('bottom'); }, 1500);
-    //   }
-    
   }
   
 
@@ -31,12 +17,12 @@ angular.module('BreadNButter.controllers', [])
   $scope.list = angular.fromJson(localStorage.items);
   $scope.removeItem = function (i) {
     let index = $scope.list.indexOf(i)
-    if (index > -1) {
-      $scope.list.splice(index, 1);
-    }
+      if (index > -1) {
+        $scope.list.splice(index, 1);
+      }
     localStorage.items = angular.toJson($scope.list);
     $rootScope.$broadcast("listChanged");
-  }
+    }
 
   $scope.goToSingle = function() {
     $location.path('/recipe/:id');
@@ -68,16 +54,13 @@ angular.module('BreadNButter.controllers', [])
 
   $scope.singleView = function(e) {
     $location.path('/recipe/' + e.target.parentNode.id);
-    // $timeout(function() {
-    //   Smooth.scrollTo('bottom');
-    // }, 500);
   }
     
 }])
 .controller('SinglePageController', ['$rootScope', '$timeout', '$scope', '$location', '$routeParams','RecipeIngredients', 
 function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredients) {
   //TODO: export ingredients on single page to Notes
-  $scope.r = RecipeIngredients.get({ id: $routeParams.id }, {id: "array"});
+  $scope.r = RecipeIngredients.get({ id: $routeParams.id });
   console.log($scope.r);
 
   $timeout(function() {
@@ -248,4 +231,49 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
     });
   }
  }])
-  
+ 
+ //for all recipes from our users
+ .controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {
+    $scope.userRecipes = userRecipe.query();
+    $scope.users = User.query();
+ }])
+ 
+ //for single recipe from our users
+ .controller('UserRecipeController', ['$scope', 'userRecipe', 'User', '$location', '$routeParams', function ($scope, userRecipe, User, $location, $routeParams) {
+  $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
+  $scope.user = User.query();
+ 
+  $scope.deleteRecipe = function () {
+ 
+ }
+ 
+ }])
+ 
+ .controller('AddRecipeController', ['$scope', 'userRecipe', 'User', '$location', function ($scope, userRecipe, User, $location) {
+  $scope.users = User.query();
+ 
+  $scope.save = function () {
+      let r = new userRecipe({
+        userid: 1,
+          name: $scope.name,
+          preptime: $scope.preptime,
+          cooktime: $scope.cooktime,
+          servingsize: $scope.servingsize,
+          directions: $scope.directions,
+          additionalinfo: $scope.additionalinfo,
+          servingyield: $scope.servingyield,
+          ingredients: $scope.ingredients
+      });
+      console.log(r);
+ 
+      r.$save(function (success) {
+          $location.path('/');
+      }, function (err) {
+          console.log(err);
+      });
+    }
+ 
+    $scope.cancel = function() {
+      $location.path('/');
+    }
+ }])
