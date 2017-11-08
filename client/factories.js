@@ -27,3 +27,11 @@ angular.module('BreadNButter.factories', [])
 .factory('RecipeID', ['$resource', function($resource) {
     return $resource('/api/recipes/recipe_id/:id', { id: '@id' });
 }])
+//Factory for user login
+.factory('User', ['$resource', function($resource) {
+    return $resource('/api/users/:id', {id: '@id'}, {
+        update: {
+            method: 'PUT'
+        }
+    });
+}])
