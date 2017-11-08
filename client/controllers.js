@@ -1,3 +1,4 @@
+
 angular.module('BreadNButter.controllers', [])
 .controller('MainController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
 
@@ -7,22 +8,8 @@ angular.module('BreadNButter.controllers', [])
   //TODO: login/UserService control
 
   $scope.search = function() {
+    if ($scope.searchbox1 != "searchresults")
     $location.path('/search/' + $scope.searchbox1 + "&page=1");
-    $location.hash('bottom');
-
-    // if($scope.searchbox1.length < 11) {
-    // $timeout(function() {
-    //   Smooth.scrollTo('bottom'); }, 500);
-    //   }
-    // else if ($scope.searchbox1.length > 11 && $scope.searchbox1.length < 19) {
-    //   $timeout(function() {
-    //     Smooth.scrollTo('bottom'); }, 1000);
-    //   }
-    // else {
-    //   $timeout(function() {
-    //     Smooth.scrollTo('bottom'); }, 1500);
-    //   }
-    
   }
   
 
@@ -31,26 +18,37 @@ angular.module('BreadNButter.controllers', [])
   $scope.list = angular.fromJson(localStorage.items);
   $scope.removeItem = function (i) {
     let index = $scope.list.indexOf(i)
-    if (index > -1) {
-      $scope.list.splice(index, 1);
-    }
+      if (index > -1) {
+        $scope.list.splice(index, 1);
+      }
     localStorage.items = angular.toJson($scope.list);
     $rootScope.$broadcast("listChanged");
-  }
+    }
 
   $scope.goToSingle = function() {
     $location.path('/recipe/:id');
   }
 }])
+
 .controller('SearchResultsController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
   $scope.recipe = Ingredients.query({ id: $routeParams.id }, function() {
     Smooth.scrollTo('bottom');
+// console.log($scope.recipe);
+  if ($scope.recipe.length > 1) {
+    let path = window.location.pathname;
+    let pageNum = path[path.length - 1];
+    let newPageNum = parseInt(pageNum);
+    $scope.count = 30 * pageNum;
+  
+    path.toString();
+    let modifier = (1 / path.length);
+    if(!path.includes("undefined")) {
+      $scope.outof = Math.floor(Math.random() * (100000 * modifier) * 10)
+    }
+  }
   });
+  
 
-  // $location.hash('bottom');
-  // $timeout(function() {
-  //   Smooth.scrollTo('bottom'); }, 500);
-    //TODO fix this
   $scope.searchMore = function() {
     //only works if &page= exists at the end of window.location.pathname, which it always should
       let path = window.location.pathname;
@@ -60,23 +58,17 @@ angular.module('BreadNButter.controllers', [])
       path = path + (newPageNum);
       // console.log(path);
       $location.path(path);
-      $location.hash('bottom');
-      $timeout(function() {
-        Smooth.scrollTo('bottom'); }, 500);
   }
 
   $scope.singleView = function(e) {
     $location.path('/recipe/' + e.target.parentNode.id);
-    // $timeout(function() {
-    //   Smooth.scrollTo('bottom');
-    // }, 500);
   }
     
 }])
 .controller('SinglePageController', ['$rootScope', '$timeout', '$scope', '$location', '$routeParams','RecipeIngredients', 
 function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredients) {
   //TODO: export ingredients on single page to Notes
-  $scope.r = RecipeIngredients.get({ id: $routeParams.id }, {id: "array"});
+  $scope.r = RecipeIngredients.get({ id: $routeParams.id });
   console.log($scope.r);
 
   $timeout(function() {
@@ -247,6 +239,7 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
     });
   }
  }])
+<<<<<<< HEAD
  .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
    UserService.me().then((success)=>{
      redirect();
@@ -270,3 +263,57 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
    }
  }])
   
+=======
+ 
+ //for all recipes from our users
+ .controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {
+    $scope.userRecipes = userRecipe.query();
+    $scope.users = User.query();
+ }])
+ 
+ //for single recipe from our users
+ .controller('UserRecipeController', ['$scope', 'userRecipe', 'User', '$location', '$routeParams', function ($scope, userRecipe, User, $location, $routeParams) {
+  $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
+  $scope.user = User.query();
+ 
+  $scope.deleteRecipe = function () {
+ 
+ }
+ 
+ }])
+ 
+ .controller('AddRecipeController', ['$scope', 'userRecipe', 'User', '$location', function ($scope, userRecipe, User, $location) {
+  $scope.users = User.query();
+ 
+  $scope.save = function () {
+      let r = new userRecipe({
+        userid: 1,
+          name: $scope.name,
+          preptime: $scope.preptime,
+          cooktime: $scope.cooktime,
+          servingsize: $scope.servingsize,
+          directions: $scope.directions,
+          additionalinfo: $scope.additionalinfo,
+          servingyield: $scope.servingyield,
+          ingredients: $scope.ingredients
+      });
+      console.log(r);
+ 
+      r.$save(function (success) {
+          $location.path('/');
+      }, function (err) {
+          console.log(err);
+      });
+    }
+ 
+    $scope.cancel = function() {
+      $location.path('/');
+    }
+ }])
+ .controller('TopRecipesController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
+  let pagenum = $routeParams.id;
+  pagenum = parseInt(pagenum) + 2;
+  $scope.recipe = Ingredients.query({ id: pagenum });
+
+}])
+>>>>>>> bcd74a947604148d425f2e40690cddea4b39624a

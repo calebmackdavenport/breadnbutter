@@ -44,6 +44,16 @@ router.get('/', auth.isLoggedIn, (req, res) => {
         console.log(e);
         res.sendStatus(500);
     });
+})
+
+router.get('/:id', (req, res) => {
+    procedures.read(req.params.id, req.body.firstname, req.body.lastname)
+    .then((users) => {
+        res.send(users);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    });
 });
 
 router.get('/me', (req,res)=>{

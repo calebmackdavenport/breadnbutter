@@ -5,8 +5,8 @@ declare namespace models {
         name: string;
         prepTime: number;
         cookTime: number;
-        servingSize: number;
-        servingYield: string;
+        servingsize: number;
+        servingyield: string;
         ingredients: string;
         directions: string;
         additionalinfo: string;
@@ -20,4 +20,5 @@ declare namespace models {
         password: string; 
         role: string;
     }
+
 }
