@@ -239,6 +239,28 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
     });
   }
  }])
+ .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+   UserService.me().then((success)=>{
+     redirect();
+   });
+
+   function redirect() {
+     let dest = $location.search().dest;
+     if(!dest){
+       dest = '/';
+     }
+     $location.replace().path(dest).search('dest', null);
+   }
+
+   $scope.login = function(){
+     UserService.login($scope.email, $scope.password)
+     .then(()=>{
+       redirect();
+     },(err)=>{
+       console.log(err);
+     });
+   }
+ }])
  
  //for all recipes from our users
  .controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {

@@ -1,9 +1,9 @@
 import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import api from './api';
 import stateRouting from './middleware/routing.mw';
 import * as cookieParser from 'cookie-parser';
+import configurePassport from './config/passport';
 import apiRouter from './api';
 var _ = require('underscore');
 var fs = require('fs');
@@ -15,6 +15,8 @@ let app = express();
 app.use(express.static(clientPath));
 app.use(bodyParser.json());
 app.use(cookieParser());
+configurePassport(app);
+
 app.use('/api', apiRouter);
 app.get('*', stateRouting);
 
