@@ -240,28 +240,48 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
   }
  }])
  .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
-   UserService.me().then((success)=>{
-     redirect();
-   });
 
-   function redirect() {
-     let dest = $location.search().dest;
-     if(!dest){
-       dest = '/';
-     }
-     $location.replace().path(dest).search('dest', null);
-   }
+//   UserService.me().then((success)=>{
+//     redirect();
+//   });
 
-   $scope.login = function(){
-     UserService.login($scope.email, $scope.password)
-     .then(()=>{
-       redirect();
-     },(err)=>{
-       console.log(err);
-     });
-   }
+//    function redirect() {
+//      let dest = $location.search().dest;
+//      if(!dest){
+//        dest = '/userrecipehome';
+//      }
+//      $location.replace().path(dest).search('dest', null);
+//    }
+
+//    $scope.login = function(){
+//      UserService.login($scope.email, $scope.password)
+//      .then(()=>{
+//        redirect();
+//      },(err)=>{
+//        console.log(err);
+//      });
+//    }
  }])
  
+ //for your recipes
+ .controller('YourRecipesController', ['$scope', '$location', 'User', 'userRecipe', 'recipeByUser', function($scope, $location, User, userRecipe, recipeByUser) {
+  $scope.recipeByUser = recipeByUser.query({id:1});
+  // console.log($scope.recipeByUser);
+  $scope.users = User.get({ id: 1 })
+  console.log($scope.users);
+
+  $scope.deleteRecipe = function (e) {
+    if(confirm("Are you sure you want to delete this recipe?")) {
+      $scope.recipeByUser.$delete(e.target.parentNode.id);
+      // $scope.recipeByUser.splice(index, 1);
+      // console.log($scope.recipeByUser);
+      $location.path('/yourrecipes');
+      };
+    }
+  
+
+}])
+
  //for all recipes from our users
  .controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {
     $scope.userRecipes = userRecipe.query();
@@ -273,10 +293,6 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
   $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
   $scope.user = User.query();
  
-  $scope.deleteRecipe = function () {
- 
- }
- 
  }])
  
  .controller('AddRecipeController', ['$scope', 'userRecipe', 'User', '$location', function ($scope, userRecipe, User, $location) {
@@ -284,7 +300,7 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
  
   $scope.save = function () {
       let r = new userRecipe({
-        userid: 1,
+          userid: 1,
           name: $scope.name,
           preptime: $scope.preptime,
           cooktime: $scope.cooktime,
@@ -296,15 +312,15 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
       });
       console.log(r);
  
-      r.$save(function (success) {
-          $location.path('/');
+      r.$save(function () {
+          $location.path('/alluserrecipes');
       }, function (err) {
           console.log(err);
       });
     }
  
     $scope.cancel = function() {
-      $location.path('/');
+      $location.path('/alluserrecipes');
     }
  }])
  .controller('TopRecipesController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {

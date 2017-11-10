@@ -7,6 +7,27 @@ import * as auth from '../middleware/auth.mw';
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+    procedures.all()
+    .then((users)=> {
+        console.log(users);
+        res.send(users);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    })
+})
+router.get('/:id', (req, res) => {
+    procedures.read(req.params.id)
+    .then((id)=> {
+        console.log(id);
+        res.send(id);
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500);
+    })
+})
+
 router.post('/login', (req,res,next)=>{
     passport.authenticate('local', (err:any, user: models.IUser, info:any)=>{
         if(err) {
