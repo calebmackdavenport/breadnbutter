@@ -6,7 +6,9 @@ angular.module('BreadNButter.controllers', [])
 .controller('WelcomeController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
   //TODO: search bar functionality
   //TODO: login/UserService control
-
+  $anchorScroll('top');
+  $anchorScroll('#top');
+  
   $scope.search = function() {
     if ($scope.searchbox1 != "searchresults")
     $location.path('/search/' + $scope.searchbox1 + "&page=1");
@@ -65,10 +67,16 @@ angular.module('BreadNButter.controllers', [])
   }
     
 }])
-.controller('SinglePageController', ['$rootScope', '$timeout', '$scope', '$location', '$routeParams','RecipeIngredients', 
-function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredients) {
+.controller('SinglePageController', ['$rootScope', '$timeout', '$scope', '$location', '$routeParams','RecipeIngredients', '$anchorScroll', 
+function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredients, $anchorScroll) {
   //TODO: export ingredients on single page to Notes
-  $scope.r = RecipeIngredients.get({ id: $routeParams.id });
+  $anchorScroll('top');
+  $anchorScroll('#top');
+
+  $scope.r = RecipeIngredients.get({ id: $routeParams.id }, function() {
+    $anchorScroll('top');
+    $anchorScroll('#top');
+  });
   console.log($scope.r);
 
   $timeout(function() {
