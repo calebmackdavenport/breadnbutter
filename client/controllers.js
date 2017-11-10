@@ -247,7 +247,7 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
    function redirect() {
      let dest = $location.search().dest;
      if(!dest){
-       dest = '/';
+       dest = '/userrecipehome';
      }
      $location.replace().path(dest).search('dest', null);
    }
