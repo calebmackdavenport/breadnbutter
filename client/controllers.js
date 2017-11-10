@@ -307,9 +307,23 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
       $location.path('/');
     }
  }])
- .controller('TopRecipesController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
+ .controller('TopRecipesController', ['$scope', '$http', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth','searchFactory', function($scope, $http, $timeout, $location, Ingredients, $routeParams, Smooth, searchFactory) {
+  
   let pagenum = $routeParams.id;
   pagenum = parseInt(pagenum) + 2;
-  $scope.recipe = Ingredients.query({ id: pagenum });
+  console.log(pagenum);
 
+  $scope.recipe = searchFactory.query({ id: pagenum });
+
+  $scope.searchMore = function() {
+    //only works if &page= exists at the end of window.location.pathname, which it always should
+      let path = window.location.pathname;
+      let pageNum = path[path.length - 1];
+      let newPageNum = parseInt(pageNum) + 1;
+      path = path.slice(0, -1);
+      path = path + (newPageNum);
+      // console.log(path);
+      $location.path(path);
+  }
+  
 }])
