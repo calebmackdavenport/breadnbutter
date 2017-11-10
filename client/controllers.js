@@ -240,7 +240,6 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
   }
  }])
  .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
-<<<<<<< HEAD
    UserService.me().then((success)=>{
      redirect();
    });
@@ -261,29 +260,6 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
        console.log(err);
      });
    }
-=======
-
-//   UserService.me().then((success)=>{
-//     redirect();
-//   });
-
-//    function redirect() {
-//      let dest = $location.search().dest;
-//      if(!dest){
-//        dest = '/userrecipehome';
-//      }
-//      $location.replace().path(dest).search('dest', null);
-//    }
-
-//    $scope.login = function(){
-//      UserService.login($scope.email, $scope.password)
-//      .then(()=>{
-//        redirect();
-//      },(err)=>{
-//        console.log(err);
-//      });
-//    }
->>>>>>> c253f6743667b9ff0e7f3b16e9fb8a4c27a684fc
  }])
  
  //for your recipes
