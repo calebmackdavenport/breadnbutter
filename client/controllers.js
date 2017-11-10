@@ -309,7 +309,8 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
  }])
  .controller('TopRecipesController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
   let pagenum = $routeParams.id;
-  pagenum = parseInt(pagenum) + 2;
+  pagenum = parseInt(pagenum);
+  pagenum += 2;
   $scope.recipe = Ingredients.query({ id: pagenum });
 
 }])
