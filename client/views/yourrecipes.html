@@ -1,0 +1,24 @@
+<main-nav></main-nav>
+
+<h3>The recipes you added will appear here when you are logged in.</h3>
+<br><br>
+
+
+<a class="btn btn-info" href="/addrecipe" role="button">Add your recipes</a>
+
+
+
+<br>
+<br>
+<br>
+
+<div id="recipes-container">
+        <div class="all-recipe-list" ng-repeat="x in recipeByUser">
+            <a id="yourrecipe" ng-click="deleteRecipe($event)" data="{{x.id}}">
+            <h2>{{ x.name }}</h2>
+            <h5>Submitted by: {{ users.firstname }} {{ users.lastname}}</h5>
+            <a ng-href="/singleuserrecipe/{{ x.id }}" class="btn view-btn" role="button">See the recipe</a>
+            <!-- <a class="btn view-btn" role="button" value="Delete" ng-click="deleteRecipe()">Delete</a> -->
+            <button type="button" class="btn view-btn search">Delete</button>
+        </div> 
+</div>

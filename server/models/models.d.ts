@@ -10,6 +10,7 @@ declare namespace models {
         ingredients: string;
         directions: string;
         additionalinfo: string;
+        imageurl: string;
     }
 
     interface IUser {

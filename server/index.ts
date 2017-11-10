@@ -22,7 +22,7 @@ app.get('*', stateRouting);
 
 
 app.get('/api/recipe-search', function(req, res) {
-    var url = encodeURI('http://food2fork.com/api/search?key=0b837ee21c5fb68ab79e1341b500cc09' + '&q=' + req.query.q);
+    var url = encodeURI('http://food2fork.com/api/search?key=0b837ee21c5fb68ab79e1341b500cc09' + '&page=' + req.query.q);
     request(url, function (error: any, response: any, body: any) {
         if (!error && response.statusCode == 200) {
             res.send(body);
