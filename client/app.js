@@ -23,27 +23,15 @@ angular.module('BreadNButter',
     })
     .when('/userrecipehome', {
         templateUrl: "./views/userrecipehome.html",
-        controller: "YourRecipeHomeController"  //Login Controller?
-    })
-    .when('/addrecipe', {
-        templateUrl: "./views/addrecipe.html",
-        controller: "AddRecipeController"
+        controller: "LoginController"  //Login Controller?
     })
     .when('/alluserrecipes', {
         templateUrl: "./views/alluserrecipes.html",
         controller: "AllUserRecipesController" 
     })
-    .when('/singleuserrecipe', {
+    .when('/singleuserrecipe/:id', {
         templateUrl: "./views/singleuserrecipe.html",
         controller: "UserRecipeController" 
-    })
-    .when('/contact', {
-        templateUrl: "./views/contact.html",
-        controller: "ContactPageController"
-    })
-    .when('/aboutus', {
-        templateUrl: "./views/aboutus.html",
-        controller: "AboutUsController"
     })
     .when('/recipe/:id', {
         templateUrl: 'views/single.html',
@@ -53,9 +41,10 @@ angular.module('BreadNButter',
         templateUrl: "views/list.html",
         controller: "ListController"
     })
-    .when('/userrecipehome', {
-        templateUrl: "./views/userrecipehome.html",
-        controller: "LoginController"  //Login Controller?
+    .when('/yourrecipes', {
+        templateUrl: "./views/yourrecipes.html",
+        controller: "YourRecipesController",
+        // requiresLogin: true
     })
     .when('/addrecipe', {
         templateUrl: "./views/addrecipe.html",
