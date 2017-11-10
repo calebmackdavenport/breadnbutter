@@ -41,3 +41,6 @@ angular.module('BreadNButter.factories', [])
             method: 'PUT'
         }});
 }])
+.factory('searchFactory', ['$resource', function($resource) {
+    return $resource('/api/ingredients/page/:id', { id: '@id' });
+}]);
