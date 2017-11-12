@@ -1,6 +1,4 @@
-<br>
-<br>
-<br>
+<main-nav></main-nav>
 
 <div class="jumbotron jumbotron-billboard">
     <div class="img"></div>
@@ -17,11 +15,11 @@
 <br>
 
 <div class="container">
-    <form ng-submit="add()">
+    <form ng-submit="save()">
         <div class="form-group">
             <div id="newrecipeform">
                 <label for="title">Recipe name: </label>
-                <input type="text" id="recipeinput" class="form-control" placeholder="eg. Apple pie" />
+                <input ng-model="name" type="text" id="recipeinput" class="form-control" placeholder="eg. Apple pie" />
             </div>
 
 
@@ -29,7 +27,7 @@
                 <div class="col" id="newrecipeform">
                     <label for="Prep time">Prep time: </label>
                     <div class="input-group">
-                        <input type="text" id="prepinput" class="form-control" placeholder="eg. 20" aria-describedby="basic-addon2" />
+                        <input ng-model="preptime" type="text" id="prepinput" class="form-control" placeholder="eg. 20" aria-describedby="basic-addon2" />
                         <span class="input-group-addon" id="basic-addon2">minutes</span>
                     </div>
                 </div>
@@ -37,7 +35,7 @@
                 <div class="col" id="newrecipeform">
                     <label for="Cook time">Cook time: </label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="eg. 10" />
+                        <input ng-model="cooktime" type="text" class="form-control" placeholder="eg. 10" />
                         <span class="input-group-addon" id="basic-addon2">minutes</span>
                     </div>
                 </div>
@@ -46,43 +44,45 @@
             <div class="row">
                 <div class="col" id="newrecipeform">
                     <label for="Serving size">Serving size: </label>
-                    <input type="text" id="servinginput" class="form-control" placeholder="eg. 5" />
+                    <input ng-model="servingsize" type="text" id="servinginput" class="form-control" placeholder="eg. 5" />
                 </div>
 
                 <div class="col" id="newrecipeform">
                     <label for="Serving yield">Serving yield: </label>
-                    <input type="text" id="servinginput" class="form-control" placeholder="eg. One 8-inch pie" />
+                    <input ng-model="servingyield" type="text" id="servinginput" class="form-control" placeholder="eg. One 8-inch pie" />
                 </div>
             </div>
 
 
             <div id="newrecipeform">
                 <label for="Ingredients">Required ingredients: </label>
-                <textarea class="form-control" id="ingredientsinput" rows="3" placeholder="One ingredient per line, include subheaders by ending with a colon (eg. For the dressing)."></textarea>
+                <textarea ng-model="ingredients" class="form-control" id="ingredientsinput" rows="3" placeholder="One ingredient per line, include subheaders by ending with a colon (eg. For the dressing)."></textarea>
 
                 <div>
                     <div id="newrecipeform">
                         <label for="Directions">Directions to prepare: </label>
-                        <textarea class="form-control" id="directionsinput" rows="5" placeholder="One step/direction per line, include subheaders by ending with a colon."></textarea>
+                        <textarea ng-model="directions" class="form-control" id="directionsinput" rows="5" placeholder="One step/direction per line, include subheaders by ending with a colon."></textarea>
                     </div>
 
                     <div id="newrecipeform">
                         <label for="Note">Note: </label>
-                        <textarea class="form-control" id="notesinput" rows="3" placeholder="Additional Information."></textarea>
+                        <textarea ng-model="additionalinfo" class="form-control" id="notesinput" rows="3" placeholder="Additional Information."></textarea>
                     </div>
 
                     <br>
                     
                     <div id="newrecipebtn">
-                        <input type="submit" value="Add" class="btn btn-light view-btn" />
-                        <input type="submit" value="Cancel" class="btn btn-light view-btn" />
+                        <input type="submit" value="Save" class="btn btn-light view-btn" />
+                  
                         <!-- <button type="button" class="btn btn-light view-btn">Submit</button>
                     <button type="button" class="btn btn-light view-btn">Cancel</button> -->
                     </div>
                 </div>
             </div>
-        </div>
+      
     </form>
+    <br>
+    <a ng-href="/alluserrecipes" class="btn view-btn" role="button">Cancel</a>
 </div>
-
+</div>
 <br>

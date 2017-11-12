@@ -1,71 +1,82 @@
+
 angular.module('BreadNButter.controllers', [])
+.controller('MainController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
+
+}])
 .controller('WelcomeController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
   //TODO: search bar functionality
   //TODO: login/UserService control
-
+  $anchorScroll('top');
+  $anchorScroll('#top');
+  
   $scope.search = function() {
-    // let searchlength = $scope.searchbox1;
-    // console.log(searchlength.length);
-    if ( true ){
-    $timeout(function () {
-    $location.path('/search/' + $scope.searchbox1 + "&page=1"); // + ", " + $scope.searchbox2
-    $location.hash('bottom');
-    Smooth.scrollTo('bottom'); }, 600);
-    }
+    if ($scope.searchbox1 != "searchresults")
+    $location.path('/search/' + $scope.searchbox1 + "&page=1");
   }
+  
 
   if (localStorage.items === undefined)
     localStorage.items = angular.toJson([]);
   $scope.list = angular.fromJson(localStorage.items);
-  // could repurpose total controller for mutliple similar items to modify quantity
-  // let total = 0;
-  // for (let i = 0; i < $scope.list.length; i++) {
-  //   total += $scope.list[i].price;
-  // }
-  // $scope.total = total
   $scope.removeItem = function (i) {
     let index = $scope.list.indexOf(i)
-    if (index > -1) {
-      $scope.list.splice(index, 1);
-    }
+      if (index > -1) {
+        $scope.list.splice(index, 1);
+      }
     localStorage.items = angular.toJson($scope.list);
     $rootScope.$broadcast("listChanged");
-  }
+    }
 
   $scope.goToSingle = function() {
     $location.path('/recipe/:id');
   }
 }])
+
 .controller('SearchResultsController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
-  $scope.recipe = Ingredients.query({ id: $routeParams.id }, {id: "array"});
+  $scope.recipe = Ingredients.query({ id: $routeParams.id }, function() {
+    Smooth.scrollTo('bottom');
+// console.log($scope.recipe);
+  if ($scope.recipe.length > 1) {
+    let path = window.location.pathname;
+    let pageNum = path[path.length - 1];
+    let newPageNum = parseInt(pageNum);
+    $scope.count = 30 * pageNum;
+  
+    path.toString();
+    let modifier = (1 / path.length);
+    if(!path.includes("undefined")) {
+      $scope.outof = Math.floor(Math.random() * (100000 * modifier) * 10)
+    }
+  }
+  });
+  
 
-    //TODO fix this
   $scope.searchMore = function() {
-      //TODO setup functionality to get to page 3+
-      //TODO IF ELSE where # of times functions has been called is > 1
-    // $location.path(location.pathname + '&page=2');
-    let clicks = 1;
-    $timeout(function () {
-      let clicks = 1;
-      $location.path(location.pathname + '&page=' + (1 + clicks));
-      $location.hash('bottom');
-      Smooth.scrollTo('bottom'); }, 750);
-
-      clicks++;
+    //only works if &page= exists at the end of window.location.pathname, which it always should
+      let path = window.location.pathname;
+      let pageNum = path[path.length - 1];
+      let newPageNum = parseInt(pageNum) + 1;
+      path = path.slice(0, -1);
+      path = path + (newPageNum);
+      // console.log(path);
+      $location.path(path);
   }
 
   $scope.singleView = function(e) {
     $location.path('/recipe/' + e.target.parentNode.id);
-    $timeout(function() {
-      Smooth.scrollTo('bottom');
-    }, 500);
   }
     
 }])
-.controller('SinglePageController', ['$rootScope', '$timeout', '$scope', '$location', '$routeParams','RecipeIngredients', 
-function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredients) {
+.controller('SinglePageController', ['$rootScope', '$timeout', '$scope', '$location', '$routeParams','RecipeIngredients', '$anchorScroll', 
+function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredients, $anchorScroll) {
   //TODO: export ingredients on single page to Notes
-  $scope.r = RecipeIngredients.get({ id: $routeParams.id }, {id: "array"});
+  $anchorScroll('top');
+  $anchorScroll('#top');
+
+  $scope.r = RecipeIngredients.get({ id: $routeParams.id }, function() {
+    $anchorScroll('top');
+    $anchorScroll('#top');
+  });
   console.log($scope.r);
 
   $timeout(function() {
@@ -121,12 +132,6 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
               }
             }
             exportList.unshift("Your grocery list provided by Bread & Butter");
-
-      // var fs = require('fs');
-      // var file = fs.createWriteStream('array.txt');
-      // file.on('error', function(err) { /* error handling */ });
-      // exportList.forEach(function(v) { file.write(v.join(', ') + '\n'); });
-      // file.end();
       var textFile = null,
       makeTextFile = function (text) {
         var data = new Blob([text], {type: 'text/plain'});
@@ -231,7 +236,8 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
     let contact = new ContactForm({
       from: $scope.email,
       subject: $scope.subject,
-      message: $scope.message
+      message: $scope.message,
+      name: $scope.name
     });
  
     contact.$save(function(){
@@ -241,4 +247,106 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
     });
   }
  }])
+ .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+   UserService.me().then((success)=>{
+     redirect();
+   });
+
+   function redirect() {
+     let dest = $location.search().dest;
+     if(!dest){
+       dest = '/userrecipehome';
+     }
+     $location.replace().path(dest).search('dest', null);
+   }
+
+   $scope.login = function(){
+     UserService.login($scope.email, $scope.password)
+     .then(()=>{
+       redirect();
+     },(err)=>{
+       console.log(err);
+     });
+   }
+ }])
+ 
+ //for your recipes
+ .controller('YourRecipesController', ['$scope', '$location', 'User', 'userRecipe', 'recipeByUser', function($scope, $location, User, userRecipe, recipeByUser) {
+  $scope.recipeByUser = recipeByUser.query({id:1});
+  // console.log($scope.recipeByUser);
+  $scope.users = User.get({ id: 1 })
+  console.log($scope.users);
+
+  $scope.deleteRecipe = function (e) {
+    if(confirm("Are you sure you want to delete this recipe?")) {
+      $scope.recipeByUser.$delete(e.target.parentNode.id);
+      // $scope.recipeByUser.splice(index, 1);
+      // console.log($scope.recipeByUser);
+      $location.path('/yourrecipes');
+      };
+    }
   
+
+}])
+
+ //for all recipes from our users
+ .controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {
+    $scope.userRecipes = userRecipe.query();
+    $scope.users = User.query();
+ }])
+ 
+ //for single recipe from our users
+ .controller('UserRecipeController', ['$scope', 'userRecipe', 'User', '$location', '$routeParams', function ($scope, userRecipe, User, $location, $routeParams) {
+  $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
+  $scope.user = User.query();
+ 
+ }])
+ 
+ .controller('AddRecipeController', ['$scope', 'userRecipe', 'User', '$location', function ($scope, userRecipe, User, $location) {
+  $scope.users = User.query();
+ 
+  $scope.save = function () {
+      let r = new userRecipe({
+          userid: 1,
+          name: $scope.name,
+          preptime: $scope.preptime,
+          cooktime: $scope.cooktime,
+          servingsize: $scope.servingsize,
+          directions: $scope.directions,
+          additionalinfo: $scope.additionalinfo,
+          servingyield: $scope.servingyield,
+          ingredients: $scope.ingredients
+      });
+      console.log(r);
+ 
+      r.$save(function () {
+          $location.path('/alluserrecipes');
+      }, function (err) {
+          console.log(err);
+      });
+    }
+ 
+    $scope.cancel = function() {
+      $location.path('/alluserrecipes');
+    }
+ }])
+ .controller('TopRecipesController', ['$scope', '$http', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth','searchFactory', function($scope, $http, $timeout, $location, Ingredients, $routeParams, Smooth, searchFactory) {
+  
+  let pagenum = $routeParams.id;
+  pagenum = parseInt(pagenum) + 2;
+  console.log(pagenum);
+
+  $scope.recipe = searchFactory.query({ id: pagenum });
+
+  $scope.searchMore = function() {
+    //only works if &page= exists at the end of window.location.pathname, which it always should
+      let path = window.location.pathname;
+      let pageNum = path[path.length - 1];
+      let newPageNum = parseInt(pageNum) + 1;
+      path = path.slice(0, -1);
+      path = path + (newPageNum);
+      // console.log(path);
+      $location.path(path);
+  }
+  
+}])

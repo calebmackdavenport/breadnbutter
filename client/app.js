@@ -18,54 +18,43 @@ angular.module('BreadNButter',
         templateUrl: "./views/searchresults.html",
         controller: "SearchResultsController"
     })  
+    .when('/recipes', {
+        templateUrl: 'views/allrecipes.html'
+    })
     .when('/userrecipehome', {
         templateUrl: "./views/userrecipehome.html",
-        controller: "YourRecipeHomeController"  //Login Controller?
-    })
-    .when('/addrecipe', {
-        templateUrl: "./views/addrecipe.html",
-        controller: "AddRecipeController"
+        controller: "LoginController"  //Login Controller?
     })
     .when('/alluserrecipes', {
         templateUrl: "./views/alluserrecipes.html",
         controller: "AllUserRecipesController" 
     })
-    .when('/singleuserrecipe', {
+    .when('/singleuserrecipe/:id', {
         templateUrl: "./views/singleuserrecipe.html",
         controller: "UserRecipeController" 
-    })
-    .when('/contact', {
-        templateUrl: "./views/contact.html",
-        controller: "ContactPageController"
-    })
-    .when('/aboutus', {
-        templateUrl: "./views/aboutus.html",
-        controller: "AboutUsController"
     })
     .when('/recipe/:id', {
         templateUrl: 'views/single.html',
-        // templateUrl: "./views/singleview.html", /* commented out temporarily */
         controller: "SinglePageController"
     })
-    .when('/list', {
-        templateUrl: "./views/list.html",
+    .when('/grocerylist', {
+        templateUrl: "views/list.html",
         controller: "ListController"
     })
-    .when('/userrecipehome', {
-        templateUrl: "./views/userrecipehome.html",
-        controller: "YourRecipeHomeController"  //Login Controller?
+    .when('/yourrecipes', {
+        templateUrl: "./views/yourrecipes.html",
+        controller: "YourRecipesController",
+        // requiresLogin: true
     })
     .when('/addrecipe', {
         templateUrl: "./views/addrecipe.html",
-        controller: "AddRecipeController"
-    })
-    .when('/alluserrecipes', {
-        templateUrl: "./views/alluserrecipes.html",
-        controller: "AllUserRecipesController" 
+        controller: "AddRecipeController",
+        requiresLogin: true
     })
     .when('/singleuserrecipe', {
         templateUrl: "./views/singleuserrecipe.html",
-        controller: "UserRecipeController" 
+        controller: "UserRecipeController",
+        requiresLogin: true
     })
     .when('/contact', {
         templateUrl: "./views/contact.html",
@@ -74,8 +63,23 @@ angular.module('BreadNButter',
     .when('/aboutus', {
         templateUrl: "./views/aboutus.html",
         controller: "AboutUsController"
+    })
+    .when('/toprecipes/:id', {
+        templateUrl: "./views/toprecipes.html",
+        controller: "TopRecipesController"
+    })
+    .when('/login', {
+        templateUrl: "views/login.html",
     })
     .otherwise({
         redirectTo: '/'
     });
-}]);
+}])
+.run(['$rootScope', '$location', 'UserService', function($rootScope, $location, UserService) {
+    $rootScope.$on('$routeChangeStart', function(event, nextRoute, previouseRoute) {
+        if(nextRoute.$$route && nextRoute.$$route.requiresLogin && !UserService.isLoggedIn()) {
+            event.preventDefault();
+            UserService.loginRedirect();
+        }
+    })
+}])

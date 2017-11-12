@@ -1,11 +1,58 @@
-<br><br><br>
-<h5>This is where the single user recipe will be displayed.</h5>
+<main-nav></main-nav>
 
-
+<br>
+<br>
+<br>
 
 <div id="recipe-container">
     <div class="recipe-list">
-        <h2>{{ recipe.title }}</h2>
-
+        <h2>{{ userRecipe.name }}</h2>
+        <h6>By: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname }}</h6>
+        <p>Submitted on: {{ userRecipe.timestamp | date:'short'}}</p>
+        <br>
+        <ul class="singledesign">
+            <li class="prepTime__item"><span class="icon--stats-clock"></span></li>
+                <li class="prepTime__item">
+                    <p class="prepTime__item--type">Prep time:</p>
+                    <p> {{ userRecipe.preptime }} m</p>
+                </li>
+                <li class="prepTime__item">
+                    <p class="prepTime__item--type">Cook time:</p>
+                    <p>{{ userRecipe.cooktime }} m</p>
+                </li>
+                <li class="prepTime__item">
+                    <p class="prepTime__item--type">Serving Size:</p>
+                    <p>{{ userRecipe.servingsize }}</p>
+                </li>
+                <li class="prepTime__item">
+                    <p class="prepTime__item--type">Serving Yield:</p>
+                    <p>{{ userRecipe.servingyield }}</p>
+                </li>
+        </ul>
+        <p>Ingredients: <br> {{ userRecipe.ingredients}}</p>
+        <p>Directions: <br> {{ userRecipe.directions}}</p>
+        <p>Additional Info: <br> {{ userRecipe.additionalinfo}}</p>        
+        <button type="button" class="btn view-btn" ng-click="deleteRecipe()">Delete</button>
     </div>
 </div>
+<br>
+
+<ul class="singledesign">
+    <li class="singledesign-type"><span class="icon--stats-clock"></span></li>
+        <li class="singledesign-type">
+            <p class="prepTime__item--type">Prep time:</p>
+            <p> {{ userRecipe.preptime }} m</p>
+        </li>
+        <li class="singledesign-type">
+            <p class="prepTime__item--type">Cook time:</p>
+            <p>{{ userRecipe.cooktime }} m</p>
+        </li>
+        <li class="singledesign-type">
+            <p class="prepTime__item--type">Serving Size:</p>
+            <p>{{ userRecipe.servingsize }}</p>
+        </li>
+        <li class="singledesign-type">
+            <p class="prepTime__item--type">Serving Yield:</p>
+            <p>{{ userRecipe.servingyield }}</p>
+        </li>
+</ul>

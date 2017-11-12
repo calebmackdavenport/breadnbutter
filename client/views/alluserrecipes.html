@@ -1,17 +1,25 @@
-<br><br><br>
-<h5>This is where all the user recipes will be displayed</h5>
+<main-nav></main-nav>
 
-
-
-<!-- TODO -->
-
-
-<!-- <div id="recipes-container">
-        <div class="recipe-list list-group">
-            <div class="recipe-list list-group-item" ng-repeat="">
-                <h2>{{ recipe.title }}</h2>
-              
-                <a ng-href="/{{ recipe.id }}" class="btn btn-primary" role="button">Read More</a>
+<div class="jumbotron jumbotron-billboard">
+    <div class="allrecipes"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="aboutusheading">Get Inspired</h1>
+                <p class="contactuslead">Recipes shared by our members</p>
             </div>
         </div>
-    </div> -->
+    </div>
+</div>
+
+<br>
+
+<div id="recipes-container">
+        <div class="all-recipe-list" ng-repeat="userRecipe in userRecipes">
+            <img ng-src="{{ userRecipe.imageurl }}" alt="">
+            <h2>{{ userRecipe.name }}</h2>
+            <h5>Submitted by: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname}}</h5>
+            <a ng-href="/singleuserrecipe/{{ userRecipe.id }}" class="btn view-btn" role="button">See the recipe</a>
+        </div> 
+</div>
+

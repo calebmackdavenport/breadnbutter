@@ -1,18 +1,15 @@
 <main-nav></main-nav>
+<a id="top"></a>
 <div class="career-header">
 		<div class="preview-container">
 				<video id="video-preview" autoplay="" loop="" muted>
 					<source src="media/food.mp4" type="video/mp4">
 				</video>
-				<div class="content-container inner-width">
+				<div class="content-container">
 				<h2 id="search-message">I have...</h2>
 				<div id="custom-search-input">
 						<form ng-submit="search()" ng-controller="WelcomeController">
 							<input type="text" class="search-query form-control" ng-model='searchbox1' id="firstSearch" placeholder="Enter your ingredients..."
-							/>
-							<input type="text" class="search-query form-control" ng-model='searchbox2' ng-show='showBox(firstVal)' id="secondSearch" placeholder="Enter another if you'd like"
-							/>
-							<input type="text" class="search-query form-control" ng-model='searchbox3' ng-show='showBox(secondVal)' id="thirdSearch" placeholder="Anything else?"
 							/>
 							<p>(ex: cheese, bread, garlic)</p>
 							<button type="submit" ng-submit="search()" class="btn search-btn">What should I make?</button>
@@ -20,7 +17,9 @@
 						</div>
 				</div>
 			</div>
-			 </div>
+		</div>
+	</div>
+</div>
 	<div class="container" id="content">
 		<div class="row">
 			<div class="col-md-12" id="rotd">

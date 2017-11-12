@@ -1,6 +1,3 @@
-//Members login ?
-
-
 import { row, rows, empty } from '../config/db';
 
 export function all(): Promise<Array<models.IUser>> {
@@ -15,8 +12,7 @@ export function readByEmail(email: string): Promise<models.IUser> {
     return row('GetUserByEmail', [email]);
 }
 
-//TODO: 
-export function create() {
-    return row('InsertUser', []);
-}
+
+
+
 
