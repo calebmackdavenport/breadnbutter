@@ -4,7 +4,8 @@ angular.module('BreadNButter',
 'BreadNButter.controllers', 
 'BreadNButter.factories',
 'BreadNButter.services',
-'BreadNButter.directives'])
+'BreadNButter.directives'
+])
 
 .config(['$locationProvider', '$routeProvider', function( $locationProvider, $routeProvider){
     $locationProvider.html5Mode(true);
@@ -13,15 +14,72 @@ angular.module('BreadNButter',
         templateUrl: "views/home.html",
         controller: "WelcomeController"
     })
-    .when('/search', {
-        templateUrl: "./views/search.html",
-        controller: "TestController"
-    })
     .when('/search/:id', {
         templateUrl: "./views/searchresults.html",
         controller: "SearchResultsController"
+    })  
+    .when('/recipes', {
+        templateUrl: 'views/allrecipes.html'
+    })
+    .when('/userrecipehome', {
+        templateUrl: "./views/userrecipehome.html",
+        controller: "LoginController"  //Login Controller?
+    })
+    .when('/alluserrecipes', {
+        templateUrl: "./views/alluserrecipes.html",
+        controller: "AllUserRecipesController" 
+    })
+    .when('/singleuserrecipe/:id', {
+        templateUrl: "./views/singleuserrecipe.html",
+        controller: "UserRecipeController" 
+    })
+    .when('/recipe/:id', {
+        templateUrl: 'views/single.html',
+        controller: "SinglePageController"
+    })
+    .when('/grocerylist', {
+        templateUrl: "views/list.html",
+        controller: "ListController"
+    })
+    .when('/yourrecipes', {
+        templateUrl: "./views/yourrecipes.html",
+        controller: "YourRecipesController",
+        // requiresLogin: true
+    })
+    .when('/addrecipe', {
+        templateUrl: "./views/addrecipe.html",
+        controller: "AddRecipeController",
+        requiresLogin: true
+    })
+    .when('/singleuserrecipe', {
+        templateUrl: "./views/singleuserrecipe.html",
+        controller: "UserRecipeController",
+        requiresLogin: true
+    })
+    .when('/contact', {
+        templateUrl: "./views/contact.html",
+        controller: "ContactPageController"
+    })
+    .when('/aboutus', {
+        templateUrl: "./views/aboutus.html",
+        controller: "AboutUsController"
+    })
+    .when('/toprecipes/:id', {
+        templateUrl: "./views/toprecipes.html",
+        controller: "TopRecipesController"
+    })
+    .when('/login', {
+        templateUrl: "views/login.html",
     })
     .otherwise({
         redirectTo: '/'
     });
-}]);
+}])
+.run(['$rootScope', '$location', 'UserService', function($rootScope, $location, UserService) {
+    $rootScope.$on('$routeChangeStart', function(event, nextRoute, previouseRoute) {
+        if(nextRoute.$$route && nextRoute.$$route.requiresLogin && !UserService.isLoggedIn()) {
+            event.preventDefault();
+            UserService.loginRedirect();
+        }
+    })
+}])

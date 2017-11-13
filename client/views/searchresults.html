@@ -1,8 +1,47 @@
-<div id="container" ng-click="searchMore()">
-    <a id="searchresults"></a>
-        <div ng-repeat="x in recipe">
-            <h2> {{ x.title }}</h2>
-            <h5> {{ x.publisher }}</h5>
-            <img ng-src="{{x.image_url}}" alt="">
-        </div>
+<main-nav></main-nav>
+
+<div class="career-header">
+	<div class="preview-container">
+		<video id="video-preview" autoplay="" loop="" muted>
+			<source src="media/food.mp4" type="video/mp4">
+		</video>
+		<div class="content-container inner-width">
+			<h2 id="search-message">I have...</h2>
+			<div id="custom-search-input">
+				<form ng-submit="search()" ng-controller="WelcomeController">
+					<input type="text" class="search-query form-control" ng-model='searchbox1' id="firstSearch" placeholder="Enter your ingredients..."
+					/>
+					<input type="text" class="search-query form-control" ng-model='searchbox2' ng-show='showBox(firstVal)' id="secondSearch"
+					 placeholder="Enter another if you'd like" />
+					<input type="text" class="search-query form-control" ng-model='searchbox3' ng-show='showBox(secondVal)' id="thirdSearch"
+					 placeholder="Anything else?" />
+					<p>(ex: cheese, bread, garlic)</p>
+					<button type="submit" ng-submit="search()" class="btn search-btn">What should I make?</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
+
+<a id="bottom">
+<div class="container">
+
+    <div class="container" id="outof">
+        Showing {{count}} of {{outof}}
+	</div>
+	
+    <div id="recipes" ng-repeat="x in recipe">
+        <a id="searchresults" ng-click="singleView($event)" data="{{x.recipe_id}}">
+            <div id="{{x.recipe_id}}" class="recipe-div" ng-model="id">
+                <h2> {{ x.title }}</h2>
+                <h5> {{ x.publisher }}</h5>
+				<img src="{{x.image_url}}" alt="..." class="img-thumbnail" id="search-img">
+				<button type="button" class="btn view-btn search">VIEW RECIPE</button>
+            </div>
+        </a>
+    </div>
+
+    <button ng-click="searchMore()" type="button" class="btn btn-outline-secondary more-btn">See More</button>
+
+</div>
+</a>
