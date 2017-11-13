@@ -1,4 +1,5 @@
 <main-nav></main-nav>
+<a id="top"></a>
 <div class="container">
 
 <div class="row">
@@ -6,7 +7,7 @@
 				<h1 id="single-recipe-title">{{r.title}}</h1>
 				<p id="single-recipe-caption">BY: <a href="{{r.publisher_url}}">{{r.publisher}}</a> || POPULARITY RANKING: ****</p>
 				<div class="recipe-description">
-				<img id="single-recipe-img" src="{{r.image_url}}">
+				<img src="{{r.image_url}}" alt="" class="img-thumbnail" id="single-recipe-img">
 				<h6>71 made it || 18 reviews || 89 likes</h6>
 				<p>Vape kogi shaman trust fund. Flannel health goth jean shorts keffiyeh poutine trust fund. 
 					Woke try-hard hella roof party lyft selfies vegan pop-up lumbersexual. Flexitarian meh 
@@ -57,8 +58,8 @@
 		<div class="col-md-6 ingredients-container">
 			<h3 class="single-subtitle">Ingredients</h3>
 			<hr>
-			<button ng-click="addIngredients()" id="cart=button">Add To Cart</button>
-			<ul>
+		
+			<ul class="ingredient-list">
 					
 							<div ng-model='i0' id='i0'>{{r.ingredients[0]}}</div>
 							<div ng-model='i1' id='i1'>{{r.ingredients[1]}}</div>
@@ -82,6 +83,7 @@
 							<div ng-model='i19' id='i19'>{{r.ingredients[19]}}</div>
 					
 			</ul>
+			<button ng-click="addIngredients()" class="btn view-btn cart">Add To Cart</button>
 		</div>
 	</div>
 </div>

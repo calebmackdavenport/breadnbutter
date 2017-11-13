@@ -211,12 +211,17 @@ hr {
 }
 
 .contactusheading {
-	margin-top: 20px;
+	margin-top: 95px;
 	color:white;
     text-align: center;
     font-weight: bold;
 	font-size: 5.6rem;
 }
+
+a:hover {
+	text-decoration: none;
+}
+
 
 .aboutusheading{
 	color:white;
@@ -230,7 +235,7 @@ hr {
 	color: #fff;
     background: url("https://images.unsplash.com/photo-1417733403748-83bbc7c05140?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center -220px fixed;
 	width: 100%;
-	height: 350px;
+	height: 400px;
 	background-size: cover;
 }
 
@@ -296,6 +301,10 @@ hr {
 	float: left;
 	margin-right: 1.875rem;
 	margin-bottom: 1.875rem;
+	height: 350px;
+	width: 350px;
+	overflow: hidden;
+	object-fit: cover;
 }
 
 .recipe-description {
@@ -375,6 +384,11 @@ hr {
 .prepTime__item:last-child {
 	border-right: 0;
 }
+
+.cart {
+	margin-left: 40px;
+}
+
 
 /* Testing */
 
@@ -549,6 +563,7 @@ img {
 	outline: 0;
 	overflow: hidden;
   }
+
   #removeBtn .icon {
 	position: relative;
 	background: #1D242B;
