@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {   
     procedures.addRecipe(req.body.userid, req.body.name, req.body.preptime, req.body.cooktime, req.body.servingsize, req.body.servingyield, req.body.ingredients, req.body.directions, req.body.additionalinfo)
     .then((id) => {
-        res.sendStatus(201).send(id);
+        res.status(201).send(id);
     }).catch((e) => {
         console.log(e);
         res.sendStatus(500);
@@ -47,8 +47,6 @@ router.delete('/:id', (req, res) => {
 router.get('/user/:id', (req, res) => {
     procedures.getUserRecipes(req.params.id)
     .then((recipeByUser) => {
-        console.log(recipeByUser);
-        console.log("testrecipebyuser");
         res.send(recipeByUser);
     }).catch((e) => {
         console.log(e);
