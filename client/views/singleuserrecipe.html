@@ -4,15 +4,16 @@
 <br>
 <br>
 
-<div id="recipe-container">
+<div class="recipe-container">
     <div class="recipe-list">
         <h2>{{ userRecipe.name }}</h2>
         <h6>By: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname }}</h6>
         <p>Submitted on: {{ userRecipe.timestamp | date:'short'}}</p>
         <br>
+      
         <img ng-src="{{ userRecipe.imageurl }}" style="height:300px;width:350px">
         <br> <br> <br>
-        <ul class="singledesign">
+        <ul class="singledesign" align="center">
             <li class="prepTime__item"><span class="icon--stats-clock"></span></li>
             <li class="prepTime__item" id="singledesignwidth">
                 <p class="prepTime__item--type">Prep time:</p>
@@ -31,6 +32,7 @@
                 <p>{{ userRecipe.servingyield }}</p>
             </li>
         </ul>
+  
         <p>Ingredients: <br> {{ userRecipe.ingredients}}</p>
         <p>Directions: <br> {{ userRecipe.directions}}</p>
         <p>Additional Info: <br> {{ userRecipe.additionalinfo}}</p>        

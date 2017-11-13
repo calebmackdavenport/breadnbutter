@@ -1,6 +1,6 @@
 /* Search Bar Styles */
 #search-message {
-	margin-top: 7rem;
+	/* margin-top: 7rem; */
 	font-size: 4rem;
 }
 
@@ -216,21 +216,12 @@ hr {
     text-align: center;
     font-weight: bold;
 	font-size: 5.6rem;
-<<<<<<< HEAD
 }
 
 a:hover {
 	text-decoration: none;
 }
 
-=======
-}
-
-a:hover {
-	text-decoration: none;
-}
-
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
 
 .aboutusheading{
 	color:white;
@@ -255,7 +246,6 @@ a:hover {
     font-size: 1.5rem;
 	color: white;
 	margin-top: -10px;
-<<<<<<< HEAD
 }
 
 #social{
@@ -267,19 +257,6 @@ a:hover {
 	margin: auto;
 }
 
-=======
-}
-
-#social{
-    text-align: center;
-}
-
-.aboutuscontent{
-	width: 60em;
-	margin: auto;
-}
-
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
 .jumbotron-billboard .userportal {
     margin-bottom: 0px;
     opacity: 0.9;
@@ -295,11 +272,7 @@ a:hover {
 }
 
 #userportal{
-<<<<<<< HEAD
 	width: 90%;
-=======
-	width: 60em;
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
 	margin: auto;
 }
 
@@ -552,7 +525,6 @@ img {
     background: #7c0000;
     color: #fff;
     text-transform: uppercase;
-<<<<<<< HEAD
     text-align: center;
     border-radius: 5px;
     display: block;
@@ -578,33 +550,6 @@ img {
 	margin-top: 100px;
 	color:white;
     text-align: center;
-=======
-    text-align: center;
-    border-radius: 5px;
-    display: block;
-    font-size: 14px;
-    display: inline-block;
-	margin: 0 2px;
-}
-
-.grocery-list-top-buttons button:hover {
-	background-color: white;
-	color: #7c0000;
-	font-weight: bold;
-}
-
-.jumbolist {
-    background: url("shelf.jpg") no-repeat fixed;
-	width: 100%;
-	height: 400px;
-	background-size: cover;
-}
-
-.groceryheading {
-	margin-top: 100px;
-	color:white;
-    text-align: center;
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
     font-weight: bold;
 	font-size: 5.6rem;
 }
@@ -703,16 +648,11 @@ img {
 	clear: both;
 	float: left;
 	width: 90%;
-<<<<<<< HEAD
-	align-content: center;
-=======
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
+	text-align: center;
 	margin: .8rem 5% 1rem 0;
 	list-style: none;
 }
 	    
-<<<<<<< HEAD
-=======
 .singledesign-type {
 	float: left;
 	width: 3em;
@@ -724,7 +664,6 @@ img {
 	margin-bottom: 1rem;
 }
 	
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
 .singledesign-type:first-child {
 	border-right: 1px solid rgb(32, 32, 32);
 	height: 55px;
@@ -732,7 +671,6 @@ img {
 	
 #contactresponse {
 	width: 50%;
-<<<<<<< HEAD
 }
 
 #singledesignwidth {
@@ -746,6 +684,20 @@ img {
 
 .top-heading {
 	text-align: center;
-=======
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
+}
+
+.login-container{
+	text-align: center;
+}
+
+#listgrid{
+	margin-bottom: 2em;
+}
+
+.yourecipewidth{
+	width: 90%;
+}
+
+.yourecipetop{
+	text-align: center;
 }
