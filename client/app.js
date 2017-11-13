@@ -18,6 +18,10 @@ angular.module('BreadNButter',
         templateUrl: "./views/searchresults.html",
         controller: "SearchResultsController"
     })  
+    .when('/recipeoftheday', {
+        templateUrl: 'views/hotchicken.html',
+        controller: 'SinglePageController'
+    })
     .when('/recipes', {
         templateUrl: 'views/allrecipes.html'
     })

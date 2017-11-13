@@ -7,10 +7,8 @@
                 <h2> {{ x.title }}</h2>
                 <h5> {{ x.publisher }}</h5>
                 <img ng-src="{{x.image_url}}" alt="" class="img-thumbnail" id="search-img">
-                <button type="button" class="btn view-btn search">VIEW RECIPE</button>
+                <button type="button" class="btn view-btn search" ng-click="goToSingle(id)">VIEW RECIPE</button>
             </div>
         </a>
 </div>
 </div>
-
-<button ng-click="searchMore()" type="button" class="btn btn-outline-secondary more-btn">See More</button>

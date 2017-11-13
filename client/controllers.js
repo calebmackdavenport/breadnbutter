@@ -30,6 +30,12 @@ angular.module('BreadNButter.controllers', [])
   $scope.goToSingle = function() {
     $location.path('/recipe/:id');
   }
+
+  $scope.goToROTD = function() {
+    $location.path('/recipeoftheday');
+  }
+
+
 }])
 
 .controller('SearchResultsController', ['$scope', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth', function($scope, $timeout, $location, Ingredients, $routeParams, Smooth) {
