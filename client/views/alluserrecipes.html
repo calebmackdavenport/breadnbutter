@@ -14,27 +14,14 @@
 
 <br>
 
-
-<div id="recipes-container">
-        <div class="all-recipe-list" ng-repeat="userRecipe in userRecipes">
-            <img ng-src="{{ userRecipe.imageurl }}" style="height:200px;width:250px">
-            <h2>{{ userRecipe.name }}</h2>
-            <h5>Submitted by: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname}}</h5>
-            <a ng-href="/singleuserrecipe/{{ userRecipe.id }}" class="btn view-btn" role="button">See the recipe</a>
-        </div> 
-</div>
-
-
-<!-- bootstrap sendgrid ??
-     
-    <div class="container-fluid">
-        <div class="row line-line"> 
-           <div class="col-6 col-6" ng-repeat="userRecipe in userRecipess">
-                <img ng-src="{{ userRecipe.imageurl }}" style="height:100px;width:150px">
-                
-                <h2>{{ userRecipe.name }}</h2>
+    <div class="container">
+        <div class="row"> 
+           <div ng-repeat="userRecipe in userRecipes" class="col-md-4" id="listgrid" align="center">
+                <img ng-src="{{ userRecipe.imageurl }}" style="height:150px;width:225px">
+                <br>
+                <h3>{{ userRecipe.name }}</h3>
                 <h5>Submitted by: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname}}</h5>
                 <a ng-href="/singleuserrecipe/{{ userRecipe.id }}" class="btn view-btn" role="button">See the recipe</a>
            </div>
         </div> 
-    </div> -->
+    </div>

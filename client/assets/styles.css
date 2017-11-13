@@ -1,6 +1,6 @@
 /* Search Bar Styles */
 #search-message {
-	margin-top: 7rem;
+	/* margin-top: 7rem; */
 	font-size: 4rem;
 }
 
@@ -648,7 +648,7 @@ img {
 	clear: both;
 	float: left;
 	width: 90%;
-	align-content: center;
+	text-align: center;
 	margin: .8rem 5% 1rem 0;
 	list-style: none;
 }
@@ -672,5 +672,21 @@ img {
 }
 
 .top-heading {
+	text-align: center;
+}
+
+.login-container{
+	text-align: center;
+}
+
+#listgrid{
+	margin-bottom: 2em;
+}
+
+.yourecipewidth{
+	width: 90%;
+}
+
+.yourecipetop{
 	text-align: center;
 }
