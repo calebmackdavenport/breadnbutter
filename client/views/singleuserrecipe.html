@@ -10,7 +10,6 @@
         <h6>By: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname }}</h6>
         <p>Submitted on: {{ userRecipe.timestamp | date:'short'}}</p>
         <br>
-<<<<<<< HEAD
         <img ng-src="{{ userRecipe.imageurl }}" style="height:300px;width:350px">
         <br> <br> <br>
         <ul class="singledesign">
@@ -31,58 +30,11 @@
                 <p class="prepTime__item--type">Serving Yield:</p>
                 <p>{{ userRecipe.servingyield }}</p>
             </li>
-=======
-        <ul class="singledesign">
-            <li class="prepTime__item"><span class="icon--stats-clock"></span></li>
-                <li class="prepTime__item">
-                    <p class="prepTime__item--type">Prep time:</p>
-                    <p> {{ userRecipe.preptime }} m</p>
-                </li>
-                <li class="prepTime__item">
-                    <p class="prepTime__item--type">Cook time:</p>
-                    <p>{{ userRecipe.cooktime }} m</p>
-                </li>
-                <li class="prepTime__item">
-                    <p class="prepTime__item--type">Serving Size:</p>
-                    <p>{{ userRecipe.servingsize }}</p>
-                </li>
-                <li class="prepTime__item">
-                    <p class="prepTime__item--type">Serving Yield:</p>
-                    <p>{{ userRecipe.servingyield }}</p>
-                </li>
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
         </ul>
         <p>Ingredients: <br> {{ userRecipe.ingredients}}</p>
         <p>Directions: <br> {{ userRecipe.directions}}</p>
         <p>Additional Info: <br> {{ userRecipe.additionalinfo}}</p>        
-<<<<<<< HEAD
         <!-- <button type="button" class="btn view-btn" ng-click="deleteRecipe()">Delete</button> -->
     </div>
 </div>
 <br>
-=======
-        <button type="button" class="btn view-btn" ng-click="deleteRecipe()">Delete</button>
-    </div>
-</div>
-<br>
-
-<ul class="singledesign">
-    <li class="singledesign-type"><span class="icon--stats-clock"></span></li>
-        <li class="singledesign-type">
-            <p class="prepTime__item--type">Prep time:</p>
-            <p> {{ userRecipe.preptime }} m</p>
-        </li>
-        <li class="singledesign-type">
-            <p class="prepTime__item--type">Cook time:</p>
-            <p>{{ userRecipe.cooktime }} m</p>
-        </li>
-        <li class="singledesign-type">
-            <p class="prepTime__item--type">Serving Size:</p>
-            <p>{{ userRecipe.servingsize }}</p>
-        </li>
-        <li class="singledesign-type">
-            <p class="prepTime__item--type">Serving Yield:</p>
-            <p>{{ userRecipe.servingyield }}</p>
-        </li>
-</ul>
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
