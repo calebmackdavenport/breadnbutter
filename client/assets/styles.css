@@ -671,3 +671,13 @@ img {
 #contactresponse {
 	width: 50%;
 }
+
+/* Popular Recipes Styles */
+
+#searchcontainer {
+	margin-top: 100px;
+}
+
+.top-heading {
+	text-align: center;
+}
