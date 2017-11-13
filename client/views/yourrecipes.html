@@ -15,11 +15,18 @@
 <div id="recipes-container">
         <div class="all-recipe-list" ng-repeat="x in recipeByUser">
             <a id="yourrecipe" ng-click="deleteRecipe($event)" data="{{x.id}}">
+<<<<<<< HEAD
             <img ng-src="{{ x.imageurl }}" style="height:200px;width:250px">
+=======
+>>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
             <h2>{{ x.name }}</h2>
             <h5>Submitted by: {{ users.firstname }} {{ users.lastname}}</h5>
             <a ng-href="/singleuserrecipe/{{ x.id }}" class="btn view-btn" role="button">See the recipe</a>
             <!-- <a class="btn view-btn" role="button" value="Delete" ng-click="deleteRecipe()">Delete</a> -->
             <button type="button" class="btn view-btn search">Delete</button>
         </div> 
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54

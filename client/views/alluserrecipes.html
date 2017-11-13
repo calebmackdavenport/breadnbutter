@@ -14,16 +14,23 @@
 
 <br>
 
+<<<<<<< HEAD
 
 <div id="recipes-container">
         <div class="all-recipe-list" ng-repeat="userRecipe in userRecipes">
             <img ng-src="{{ userRecipe.imageurl }}" style="height:200px;width:250px">
+=======
+<div id="recipes-container">
+        <div class="all-recipe-list" ng-repeat="userRecipe in userRecipes">
+            <img ng-src="{{ userRecipe.imageurl }}" alt="">
+>>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
             <h2>{{ userRecipe.name }}</h2>
             <h5>Submitted by: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname}}</h5>
             <a ng-href="/singleuserrecipe/{{ userRecipe.id }}" class="btn view-btn" role="button">See the recipe</a>
         </div> 
 </div>
 
+<<<<<<< HEAD
 
 <!-- bootstrap sendgrid ??
      
@@ -38,3 +45,5 @@
            </div>
         </div> 
     </div> -->
+=======
+>>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
