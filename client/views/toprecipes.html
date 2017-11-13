@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <main-nav></main-nav>
 <div class="container" id="searchcontainer">
     <h1 class="top-heading">Check out some of our most popular recipes:</h1>
@@ -13,16 +12,5 @@
         </a>
 </div>
 </div>
-=======
-<div id="30recipes" ng-repeat="x in recipe">
-        <a id="searchresults" ng-click="singleView($event)" data="{{x.recipe_id}}">
-            <div id="{{x.recipe_id}}" ng-model="id">
-                <h2> {{ x.title }}</h2>
-                <h5> {{ x.publisher }}</h5>
-                <img ng-src="{{x.image_url}}" alt="">
-            </div>
-        </a>
-</div>
->>>>>>> a4483d1f4d3ea3b5ac9456797637525557423e54
 
 <button ng-click="searchMore()" type="button" class="btn btn-outline-secondary more-btn">See More</button>
