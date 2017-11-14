@@ -280,7 +280,7 @@ function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
  //for your recipes
  .controller('YourRecipesController', ['$scope', '$location', 'User', 'userRecipe', 'recipeByUser', function($scope, $location, User, userRecipe, recipeByUser) {
   $scope.recipeByUser = recipeByUser.query({id:1});
-  // console.log($scope.recipeByUser);
+  console.log($scope.recipeByUser);
   $scope.users = User.get({ id: 1 })
   console.log($scope.users);
 
