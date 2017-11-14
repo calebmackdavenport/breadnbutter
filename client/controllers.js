@@ -95,7 +95,6 @@ function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredient
     console.log(iList);
 
     $scope.addIngredients = function () {
-      alert('Ingredients added to the list!');
       let cachedItems = JSON.parse(localStorage.items);
       for(i=0; i<iList.length; i++) {
         cachedItems.push(iList[i]);
@@ -111,8 +110,11 @@ function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredient
   // $location.hash('bottom');
   // Smooth.scrollTo('bottom');
 }])
-.controller('ListController', ['$scope','$rootScope', '$routeParams', '$http', '$location',
-function ($scope, $rootScope, $routeParams, $http, $location) {
+.controller('ListController', ['$scope','$rootScope', '$routeParams', '$http', '$location', '$anchorScroll',
+function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
+
+  $anchorScroll('top');
+  $anchorScroll('#top');
 
   if (localStorage.items === undefined)
   localStorage.items = angular.toJson([]);

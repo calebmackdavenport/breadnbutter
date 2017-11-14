@@ -1,5 +1,5 @@
 // Reset
-$( document ).ready(function() {
+
 $("button").on('mouseout', function(){
     if($(this).hasClass("confirm") || $(this).hasClass("done")){
         setTimeout(function(){
@@ -8,3 +8,7 @@ $("button").on('mouseout', function(){
         }, 3000);
     }
 });
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+  })
