@@ -1,4 +1,3 @@
-
 angular.module('BreadNButter.controllers', [])
 .controller('MainController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
 

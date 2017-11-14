@@ -235,9 +235,18 @@ a:hover {
 	margin-top: 100px;
 }
 
+.contact-email-heading {
+	text-align: center;
+	font-family: Montserrat, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 20px;
+	color: rgb(58, 58, 58);
+}
+
 .contactus {
 	color: #fff;
-    background: url("/media/cupcakes.jpg") center -220px fixed;
+    background: url("/media/donuts.jpg") center -200px fixed;
 	width: 100%;
 	height: 400px;
 	background-size: cover;
