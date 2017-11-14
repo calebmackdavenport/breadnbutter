@@ -84,7 +84,24 @@
 							<div ng-model='i19' id='i19'>{{r.ingredients[19]}}</div>
 					
 			</ul>
-			<button ng-click="addIngredients()" class="btn view-btn cart">Add To Cart</button>
+			<button ng-click="addIngredients()" class="btn view-btn cart" data-toggle="modal" data-target="#cartModal">Add To Cart</button>
+		
+			 <!-- Modal -->
+			 <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content">
+						<div class="modal-header">
+						  <h5 class="modal-title" id="exampleModalLabel" style="text-align: center">Looks yummy! <br> Your ingredients have been added to your grocery list!</h5>
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</div>
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					  </div>
+					</div>
+				  </div>
 		</div>
 	</div>
 </div>

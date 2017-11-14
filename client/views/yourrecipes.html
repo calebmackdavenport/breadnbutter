@@ -16,11 +16,11 @@
     <div class="container">
         <div class="row">
         
-            <div ng-repeat="x in recipeByUser" class="col-md-4" align="center">
+            <div ng-repeat="recipe in recipeByUser" class="col-md-4" align="center">
                 <a id="yourrecipe" ng-click="deleteRecipe($event)" data="{{x.id}}">
-            <img ng-src="{{ x.imageurl }}" style="height:200px;width:250px">
-            <h3>{{ x.name }}</h3>
-            <h5>Submitted by: {{ users.firstname }} {{ users.lastname}}</h5>
+            <img ng-src="{{ recipe.imageurl }}" style="height:200px;width:250px">
+            <h3>{{ recipe.name }}</h3>
+            <h5>Submitted by: {{ users.firstname }} {{ users.lastname }}</h5>
             <a ng-href="/singleuserrecipe/{{ x.id }}" class="btn view-btn" role="button">See the recipe</a>
                 <!-- <a class="btn view-btn" role="button" value="Delete" ng-click="deleteRecipe()">Delete</a> -->
                 <button type="button" class="btn view-btn search">Delete</button>
