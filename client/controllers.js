@@ -248,7 +248,6 @@ function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
     });
  
     contact.$save(function(){
-      alert ("Thank you for your message! Bon appetit!")
     }, function(err){
       console.log(err);
     });
@@ -301,7 +300,10 @@ function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
  }])
  
  //for single recipe from our users
- .controller('UserRecipeController', ['$scope', 'userRecipe','$routeParams', function ($scope, userRecipe, $routeParams) {
+ .controller('UserRecipeController', ['$scope', 'userRecipe','$routeParams', '$anchorScroll', function ($scope, userRecipe, $routeParams, $anchorScroll) {
+  $anchorScroll('top');
+  $anchorScroll('#top');
+  
   $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
  
  }])

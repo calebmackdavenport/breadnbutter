@@ -1,27 +1,25 @@
 <main-nav active-page="'alluserrecipes'"></main-nav>
 
-<div class="jumbotron jumbotron-billboard">
-    <div class="allrecipes"></div>
-    <div class="container">
+<div class="jumbotron jumbotron-billboard allrecipes">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="aboutusheading">Get Inspired</h1>
+                <h1 class="contactusheading">Get Inspired</h1>
                 <p class="contactuslead">Recipes shared by our members</p>
             </div>
         </div>
     </div>
-</div>
 
 <br>
 
     <div class="container">
-        <div class="row"> 
-           <div ng-repeat="userRecipe in userRecipes" class="col-md-4" id="listgrid" align="center">
-                <img ng-src="{{ userRecipe.imageurl }}" style="height:150px;width:225px">
+           <div ng-repeat="userRecipe in userRecipes" class="col-md-4" id="recipes">
+               <div class="recipe-div">
+                <img ng-src="{{ userRecipe.imageurl }}" id="search-img" class="img-thumbnail">
                 <br>
                 <h3>{{ userRecipe.name }}</h3>
                 <h5>Submitted by: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname}}</h5>
-                <a ng-href="/singleuserrecipe/{{ userRecipe.id }}" class="btn view-btn" role="button">See the recipe</a>
+                <a ng-href="/singleuserrecipe/{{ userRecipe.id }}" class="btn view-btn" role="button">View Recipe</a>
            </div>
         </div> 
     </div>
+

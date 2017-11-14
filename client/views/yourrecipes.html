@@ -2,6 +2,10 @@
 
 
 <br><br><br>
+<main-nav></main-nav>
+<div class="jumbotron jumbotron-billboard yourrecipes">
+        <h1 class="contactusheading">Your Virtual Recipe Box</h1>
+    </div>
 
 <div class="yourecipetop" width="80%">
     <h3 align="center">Would you like to add a new recipe?</h3>
@@ -10,22 +14,20 @@
     <br>
     <br>
     <br>
-
+  
     <h3 align="center">You have added the following recipes.</h3>
     <br>
     <div class="container">
-        <div class="row">
         
-            <div ng-repeat="recipe in recipeByUser" class="col-md-4" align="center">
+            <div ng-repeat="recipe in recipeByUser" class="col-md-4" id="recipes">
+                    <div class="recipe-div">
                 <a id="yourrecipe" ng-click="deleteRecipe($event)" data="{{x.id}}">
-            <img ng-src="{{ recipe.imageurl }}" style="height:200px;width:250px">
+            <img ng-src="{{ recipe.imageurl }}" id="search-img" class="img-thumbnail">
             <h3>{{ recipe.name }}</h3>
-            <h5>Submitted by: {{ users.firstname }} {{ users.lastname }}</h5>
             <a ng-href="/singleuserrecipe/{{ x.id }}" class="btn view-btn" role="button">See the recipe</a>
                 <!-- <a class="btn view-btn" role="button" value="Delete" ng-click="deleteRecipe()">Delete</a> -->
                 <button type="button" class="btn view-btn search">Delete</button>
             </div>
         </div>
+    </div>
  
-
-</div>

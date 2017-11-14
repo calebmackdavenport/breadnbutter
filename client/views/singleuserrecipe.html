@@ -1,42 +1,53 @@
 <main-nav></main-nav>
+<a id="top"></a>
+<div class="container">
+<br><br>
+<div class="row">
+		<div class="col-md-12">
+				<h1 id="single-recipe-title">{{ userRecipe.name }}</h1>
+				<p id="single-recipe-caption">Submitted by: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname }}</a></p>
+				<hr>
+				<div class="recipe-description">
+				<img src="{{ userRecipe.imageurl }}" alt="" class="img-thumbnail" id="single-recipe-img">
+				<p>The basic idea was to stuff chicken with all of the flavours of jalapeno poppers and then to wrap them in bacon
+					 and grill, fry or bake them. Jalapeno poppers are commonly filled with cream cheese and/or cheddar cheese 
+					 and they are either coated in bread crumbs and fried until crispy or wrapped in bacon and grilled or baked until
+					  the bacon is cooked. I like a simple mixture of cream cheese, cheddar or monterey jack cheese and diced jalapeno
+					   peppers for the filling and the jalapenos can be roasted, fresh or even pickled. These bacon wrapped jalapeno
+						popper stuffed chicken tastes just like jalapeno poppers and makes for one really tasty light meal! Who says 
+						you can't have your favourite game day snacks for dinner any night of the week? </p>
+			</div>
+		</div>
+		
+		<div class="col-md-6 directions-container">
+                <h3 class="single-subtitle">Directions</h3>
+                <hr>
+                <ul class="prepTime">
+						<li class="prepTime__item"><span class="icon--stats-clock"></span></li>
+							<li class="prepTime__item">
+								<p class="prepTime__item--type">Prep</p><time itemprop="prepTime" datetime="PT20M"><span class="prepTime__item--time">20</span> m</time>
+							</li>
+									<li class="prepTime__item">
+								<p class="prepTime__item--type">Cook</p><time itemprop="cookTime" datetime="PT16M"><span class="prepTime__item--time">25</span> m</time>
+							</li>
+									<li class="prepTime__item">
+								<p class="prepTime__item--type">Ready In</p><time itemprop="totalTime" datetime="PT10H"><span class="prepTime__item--time">50</span> m</time>
+							</li>
+                        </ul>
+                <p>{{ userRecipe.directions}}</p>
+                <br>
+                <p><b>Additional Info:</b> <br> {{ userRecipe.additionalinfo}}</p> 
 
-<br>
-<br>
-<br>
+	
+				
+			</div>
 
-<div class="recipe-container">
-    <div class="recipe-list">
-        <h2>{{ userRecipe.name }}</h2>
-        <h6>By: {{ userRecipe.UserFirstname }} {{ userRecipe.UserLastname }}</h6>
-        <p>Submitted on: {{ userRecipe.timestamp | date:'short'}}</p>
-        <br>
-      
-        <img ng-src="{{ userRecipe.imageurl }}" style="height:300px;width:350px">
-        <br> <br> <br>
-        <ul class="singledesign" align="center">
-            <li class="prepTime__item"><span class="icon--stats-clock"></span></li>
-            <li class="prepTime__item" id="singledesignwidth">
-                <p class="prepTime__item--type">Prep time:</p>
-                <p> {{ userRecipe.preptime }} m</p>
-            </li>
-            <li class="prepTime__item" id="singledesignwidth">
-                <p class="prepTime__item--type">Cook time:</p>
-                <p>{{ userRecipe.cooktime }} m</p>
-            </li>
-            <li class="prepTime__item" id="singledesignwidth">
-                <p class="prepTime__item--type">Serving Size:</p>
-                <p>{{ userRecipe.servingsize }}</p>
-            </li>
-            <li class="prepTime__item" id="singledesignwidth">
-                <p class="prepTime__item--type">Serving Yield:</p>
-                <p>{{ userRecipe.servingyield }}</p>
-            </li>
-        </ul>
-  
-        <p>Ingredients: <br> {{ userRecipe.ingredients}}</p>
-        <p>Directions: <br> {{ userRecipe.directions}}</p>
-        <p>Additional Info: <br> {{ userRecipe.additionalinfo}}</p>        
-        <!-- <button type="button" class="btn view-btn" ng-click="deleteRecipe()">Delete</button> -->
-    </div>
+		<div class="col-md-6 ingredients-container">
+			<h3 class="single-subtitle">Ingredients</h3>
+            <hr>
+            <p>{{ userRecipe.ingredients}}</p>
+		
+		</div>
+	</div>
 </div>
-<br>
+<main-footer></main-footer>
