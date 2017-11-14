@@ -15,18 +15,19 @@ router.get('/', (req, res) => {
     }).catch((e) => {
         console.log(e);
         res.sendStatus(500);
-    })
-})
+    });
+});
+
 router.get('/:id', (req, res) => {
-    procedures.read(req.params.id)
+    procedures.read(req.body.id)
     .then((id)=> {
         console.log(id);
         res.send(id);
     }).catch((e) => {
         console.log(e);
         res.sendStatus(500);
-    })
-})
+    });
+});
 
 router.post('/login', (req,res,next)=>{
     passport.authenticate('local', (err:any, user: models.IUser, info:any)=>{
@@ -35,7 +36,7 @@ router.post('/login', (req,res,next)=>{
             res.sendStatus(500);
         }
         if(!user) {
-            res.sendStatus(401).send(info);
+            res.status(401).send(info);
         }
         req.logIn(user, (err)=>{
             if(err) {

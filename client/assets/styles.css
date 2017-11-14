@@ -1,6 +1,7 @@
-/* Search Bar Styles */
+
+/* Search Bar Styles */ 
 #search-message {
-	/* margin-top: 7rem; */
+
 	font-size: 4rem;
 }
 
@@ -116,6 +117,9 @@ hr {
 /* Navigation Styles */
 .navbar {
 	background-color: white;
+	-webkit-box-shadow: 0 9px 6px -6px #999;
+    -moz-box-shadow: 0 9px 6px -6px #999;
+    box-shadow: 0 9px 6px -6px #999;
 }
 
 #logo {
@@ -233,7 +237,7 @@ a:hover {
 
 .contactus {
 	color: #fff;
-    background: url("https://images.unsplash.com/photo-1417733403748-83bbc7c05140?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center -220px fixed;
+    background: url("/media/cupcakes.jpg") center -220px fixed;
 	width: 100%;
 	height: 400px;
 	background-size: cover;
@@ -288,12 +292,12 @@ a:hover {
 }
 /* Single View Styles */
 
+
 #single-recipe-title {
 	margin-top: 6.25rem;
-	margin-bottom: 0.625em;
-	margin-left: -6.25rem;
+	margin-bottom: 0.3em;
 	text-align: center;
-	font-size: 2.18rem;
+	font-size: 3rem;
 	font-weight: bold;
 }
 
@@ -313,7 +317,7 @@ a:hover {
 
 #single-recipe-caption {
 	text-align: center;
-	font-size: 0.93rem;
+	font-size: 1rem;
 	margin-bottom: 2.8rem;
 	margin-left: -5.6rem;
 }
@@ -425,12 +429,12 @@ video {
 	left: 0;
 	position: absolute;
 	}
-	.career-header .content-container {
+	 .content-container {
 	position: absolute;
 	width: 100%;
-	top: 0;
-	right: 0;
-	left: 0;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	color: #FFF;
 	margin-top: 150px;
 	text-align: center;
@@ -626,7 +630,7 @@ img {
 	color: #fff;
 	background: url("https://images.unsplash.com/photo-1447078806655-40579c2520d6?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center center;
 	width: 100%;
-	height: 100%;
+	height: 400px;
 	background-size: cover;
 	overflow: hidden;
 	position:absolute;
@@ -701,3 +705,263 @@ img {
 .yourecipetop{
 	text-align: center;
 }
+
+/* Footer Styles */
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 40px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 30px Montserrat, sans-serif;
+	text-transform: uppercase;
+	margin: 0;
+	letter-spacing: 3px;
+}
+
+.footer-distributed h3 span{
+	color:  #940101;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #7c0000;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  white;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+/* Contact Envelope */
+
+h1 {
+  text-align: center;
+  color: #a8a8a8;
+  text-shadow: 1px 1px 0 white;
+}
+
+form {
+  max-width: 800px;
+  text-align: center;
+  margin: 20px auto;
+}
+form input, form textarea {
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  font-family: 'Merriweather', sans-serif;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  resize: none;
+}
+form input:focus, form textarea:focus {
+  -moz-box-shadow: 0 0px 2px #7c0000 !important;
+  -webkit-box-shadow: 0 0px 2px #7c0000 !important;
+  box-shadow: 0 0px 2px #7c0000 !important;
+}
+form #input-submit {
+  color: white;
+  background: #7c0000;
+  cursor: pointer;
+}
+form #input-submit:hover {
+  -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+  -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+  box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+}
+form textarea {
+  height: 126px;
+}
+
+.half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+}
+
+.right {
+  width: 50%;
+}
+
+.left {
+  margin-right: 2%;
+}
+
+@media (max-width: 480px) {
+  .half {
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+  }
+}
+
+#input-message {
+	height: 200px;
+	width: 400px;
+}
+/* Clearfix */
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+

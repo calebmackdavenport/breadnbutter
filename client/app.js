@@ -38,8 +38,11 @@ angular.module('BreadNButter',
         controller: "UserRecipeController" 
     })
     .when('/recipe/:id', {
-        templateUrl: 'views/single.html',
+        templateUrl: '/views/single.html',
         controller: "SinglePageController"
+    })
+    .when('/recipes/302', {
+        templateUrl: '/views/burger.html'
     })
     .when('/grocerylist', {
         templateUrl: "views/list.html",
@@ -55,18 +58,13 @@ angular.module('BreadNButter',
         controller: "AddRecipeController",
         requiresLogin: true
     })
-    .when('/singleuserrecipe', {
-        templateUrl: "./views/singleuserrecipe.html",
-        controller: "UserRecipeController",
-        requiresLogin: true
-    })
     .when('/contact', {
         templateUrl: "./views/contact.html",
         controller: "ContactPageController"
     })
     .when('/aboutus', {
         templateUrl: "./views/aboutus.html",
-        controller: "AboutUsController"
+        controller: " "
     })
     .when('/toprecipes/:id', {
         templateUrl: "./views/toprecipes.html",
@@ -80,7 +78,7 @@ angular.module('BreadNButter',
     });
 }])
 .run(['$rootScope', '$location', 'UserService', function($rootScope, $location, UserService) {
-    $rootScope.$on('$routeChangeStart', function(event, nextRoute, previouseRoute) {
+    $rootScope.$on('$routeChangeStart', function(event, nextRoute, previousRoute) {
         if(nextRoute.$$route && nextRoute.$$route.requiresLogin && !UserService.isLoggedIn()) {
             event.preventDefault();
             UserService.loginRedirect();

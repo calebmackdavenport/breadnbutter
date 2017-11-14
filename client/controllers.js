@@ -294,23 +294,18 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
   
 
 }])
-
  //for all recipes from our users
- .controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {
+ .controller('AllUserRecipesController', ['$scope', 'userRecipe', function($scope, userRecipe) {
     $scope.userRecipes = userRecipe.query();
-    $scope.users = User.query();
  }])
  
  //for single recipe from our users
- .controller('UserRecipeController', ['$scope', 'userRecipe', 'User', '$location', '$routeParams', function ($scope, userRecipe, User, $location, $routeParams) {
+ .controller('UserRecipeController', ['$scope', 'userRecipe','$routeParams', function ($scope, userRecipe, $routeParams) {
   $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
-  $scope.user = User.query();
  
  }])
  
- .controller('AddRecipeController', ['$scope', 'userRecipe', 'User', '$location', function ($scope, userRecipe, User, $location) {
-  $scope.users = User.query();
- 
+ .controller('AddRecipeController', ['$scope', 'userRecipe', '$location', function ($scope, userRecipe, $location) { 
   $scope.save = function () {
       let r = new userRecipe({
           userid: 1,
@@ -338,6 +333,10 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
  }])
  .controller('TopRecipesController', ['$scope', '$http', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth','searchFactory', function($scope, $http, $timeout, $location, Ingredients, $routeParams, Smooth, searchFactory) {
   
+  $scope.goToBurger = function() {
+    $location.path('/recipes/302');
+  }
+
   let pagenum = $routeParams.id;
   pagenum = parseInt(pagenum) + 2;
   console.log(pagenum);
