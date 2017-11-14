@@ -338,6 +338,10 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
  }])
  .controller('TopRecipesController', ['$scope', '$http', '$timeout', '$location', 'Ingredients', '$routeParams', 'Smooth','searchFactory', function($scope, $http, $timeout, $location, Ingredients, $routeParams, Smooth, searchFactory) {
   
+  $scope.goToBurger = function() {
+    $location.path('/recipes/302');
+  }
+
   let pagenum = $routeParams.id;
   pagenum = parseInt(pagenum) + 2;
   console.log(pagenum);

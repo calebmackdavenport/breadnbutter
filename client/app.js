@@ -38,8 +38,11 @@ angular.module('BreadNButter',
         controller: "UserRecipeController" 
     })
     .when('/recipe/:id', {
-        templateUrl: 'views/single.html',
+        templateUrl: '/views/single.html',
         controller: "SinglePageController"
+    })
+    .when('/recipes/302', {
+        templateUrl: '/views/burger.html'
     })
     .when('/grocerylist', {
         templateUrl: "views/list.html",
