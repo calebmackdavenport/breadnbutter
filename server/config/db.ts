@@ -1,7 +1,7 @@
 import * as mysql from 'mysql';
 
 export let pool = mysql.createPool({
-    connectionLimit: 2,
+    connectionLimit: 5,
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
@@ -27,7 +27,8 @@ function callProcedure(procedureName: string, args: Array<any> = []): Promise<Ar
                     }
                 }
                 var callString = 'CALL ' + procedureName + '(' + placeholders + ')'; 
-                connection.query(callString, args, function(err, resultsets) { 
+                connection.query(callString, args, function(err, resultsets) {
+                    connection.release(); 
                     if (err) {
                         reject(err);
                     } else {

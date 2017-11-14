@@ -1,4 +1,3 @@
-
 angular.module('BreadNButter.controllers', [])
 .controller('MainController', ['$scope', '$location', '$timeout', '$anchorScroll', 'Smooth', function ($scope, $location, $timeout, $anchorScroll, Smooth) {
 
@@ -96,7 +95,6 @@ function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredient
     console.log(iList);
 
     $scope.addIngredients = function () {
-      alert('Ingredients added to the list!');
       let cachedItems = JSON.parse(localStorage.items);
       for(i=0; i<iList.length; i++) {
         cachedItems.push(iList[i]);
@@ -112,8 +110,11 @@ function($rootScope, $timeout, $scope, $location, $routeParams, RecipeIngredient
   // $location.hash('bottom');
   // Smooth.scrollTo('bottom');
 }])
-.controller('ListController', ['$scope','$rootScope', '$routeParams', '$http', '$location',
-function ($scope, $rootScope, $routeParams, $http, $location) {
+.controller('ListController', ['$scope','$rootScope', '$routeParams', '$http', '$location', '$anchorScroll',
+function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
+
+  $anchorScroll('top');
+  $anchorScroll('#top');
 
   if (localStorage.items === undefined)
   localStorage.items = angular.toJson([]);
@@ -279,7 +280,7 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
  //for your recipes
  .controller('YourRecipesController', ['$scope', '$location', 'User', 'userRecipe', 'recipeByUser', function($scope, $location, User, userRecipe, recipeByUser) {
   $scope.recipeByUser = recipeByUser.query({id:1});
-  // console.log($scope.recipeByUser);
+  console.log($scope.recipeByUser);
   $scope.users = User.get({ id: 1 })
   console.log($scope.users);
 

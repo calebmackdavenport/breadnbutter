@@ -1,31 +1,35 @@
 
 /* Search Bar Styles */ 
 #search-message {
+<<<<<<< HEAD
 
 	font-size: 4rem;
+=======
+	font-size: 5.5rem;
+>>>>>>> dev2
 }
 
 #custom-search-input p {
 	letter-spacing: .125rem;
+	font-family: Courier, monospace;
 }
 
 #custom-search-input .search-query {
-	margin-top: 1rem;
 	-webkit-border-radius: .18rem;
 	-moz-border-radius: .18rem;
 	border-radius: .62rem;
 	color: white;
 	opacity: 0.6;
-	width: 40rem;
-	height: 4.4rem;
+	width: 50rem;
+	height: 5.4rem;
 	color: black;
 	font-size: 2.8rem;
-	margin: 0 auto;
 }
 
 .search-btn {
 	padding: .31rem;
-	width: 19rem;
+	width: 20rem;
+	height: 3rem;
 	font-size: 1.5rem;
 	margin-top: .625rem;
 	background-color: #7c0000;
@@ -40,18 +44,31 @@
 	color: white;
 }
 
+.example {
+	font-size: 2rem;
+}
+
 
 .search-query:focus + button {
 	z-index: 3;   
 }
 
 /* Homepage Recipes Styles */
+
+
 #rotd {
 	margin-bottom: 2.5rem;
 }
 
+.rotd-main {
+	font-weight: bold;
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+}
+
 .rotd-container {
 	margin-top: 2.5rem;
+	background: gray;
 }
 
 #rotd-img {
@@ -65,6 +82,13 @@
 #rotd-title {
 	margin-bottom: .625rem;
 	font-weight: bold;
+}
+
+
+.rotd-box {
+	background-color: rgba(128, 128, 128, 0.1);
+	padding: 60px;
+	padding-top: 20px;
 }
 
 
@@ -110,6 +134,14 @@
 	margin-right: 0.625em;
 }
 
+.weekdays {
+	font-family: Courier, sans-serif;
+	color: #7c0000;
+	font-size: 30px;
+	font-weight: bold;
+    text-shadow: 3px 3px rgba(128, 128, 128, 0.3);
+}
+
 hr {
 	border: 2px solid rgba(0, 0, 0, 0.445);
 }
@@ -119,13 +151,19 @@ hr {
 	background-color: white;
 	-webkit-box-shadow: 0 9px 6px -6px #999;
     -moz-box-shadow: 0 9px 6px -6px #999;
+<<<<<<< HEAD
     box-shadow: 0 9px 6px -6px #999;
+=======
+	box-shadow: 0 9px 6px -6px #999;
+	height: 5rem;
+	font-size: 25px;
+>>>>>>> dev2
 }
 
 #logo {
 	font-family: Montserrat, sans-serif;
 	letter-spacing:  0.18rem;
-	font-size: 1.25rem;
+	font-size: 2rem;
 }
 
 .custom-toggler.navbar-toggler {
@@ -207,9 +245,9 @@ hr {
 
 .aboutus {
 	color: #fff;
-    background: url("https://images.unsplash.com/photo-1497534547324-0ebb3f052e88?auto=format&fit=crop&w=1290&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") no-repeat center -170px fixed;
+    background: url("https://images.unsplash.com/photo-1497534547324-0ebb3f052e88?auto=format&fit=crop&w=1290&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") no-repeat center -300px fixed;
     width: 100%;
-	height: 400px;
+	height: 600px;
 	background-size: cover;
 
 }
@@ -235,11 +273,31 @@ a:hover {
 	margin-top: 100px;
 }
 
+.contact-email-heading {
+	text-align: center;
+	font-family: Montserrat, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 20px;
+	color: rgb(58, 58, 58);
+}
+
+.contact-phone-heading {
+	text-align: center;
+	font-family: Courier, sans-serif;
+	color: rgb(58, 58, 58);
+	font-size: 40px;
+}
+
 .contactus {
 	color: #fff;
+<<<<<<< HEAD
     background: url("/media/cupcakes.jpg") center -220px fixed;
+=======
+    background: url("/media/donuts.jpg") center -200px fixed;
+>>>>>>> dev2
 	width: 100%;
-	height: 400px;
+	height: 600px;
 	background-size: cover;
 }
 
@@ -273,6 +331,7 @@ a:hover {
     position:absolute;
     top:0;left:0;
 	z-index:1;
+
 }
 
 #userportal{
@@ -416,7 +475,11 @@ video {
 
 	#video-preview {
 	min-width: 100%;
+	height: 100vh;
+	width: auto;
+	height: auto;
 	}
+	
 	.career-header {
 	text-align: center;
 	}
@@ -432,11 +495,14 @@ video {
 	 .content-container {
 	position: absolute;
 	width: 100%;
+<<<<<<< HEAD
 	top: 25%;
+=======
+	top: 50%;
+>>>>>>> dev2
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: #FFF;
-	margin-top: 150px;
 	text-align: center;
 	text-shadow: 0 0 5px rgba(1, 1, 1, 0.5);
 	}
@@ -546,7 +612,7 @@ img {
 .jumbolist {
     background: url("shelf.jpg") no-repeat fixed;
 	width: 100%;
-	height: 400px;
+	height: 600px;
 	background-size: cover;
 }
 
@@ -879,6 +945,7 @@ img {
 
 }
 
+<<<<<<< HEAD
 /* Contact Envelope */
 
 h1 {
@@ -889,6 +956,20 @@ h1 {
 
 form {
   max-width: 800px;
+=======
+/* Contact Styles */
+
+.contact-socialmedias {
+	text-align: center;
+}
+
+.contact-socialmedias a {
+	color: #7c0000;
+}
+
+form {
+  max-width: 804px;
+>>>>>>> dev2
   text-align: center;
   margin: 20px auto;
 }
