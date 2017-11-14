@@ -31,7 +31,7 @@ angular.module('BreadNButter',
     })
     .when('/alluserrecipes', {
         templateUrl: "./views/alluserrecipes.html",
-        controller: "AllUserRecipesController" 
+        controller: "AllUserRecipesController",
     })
     .when('/singleuserrecipe/:id', {
         templateUrl: "./views/singleuserrecipe.html",
@@ -51,7 +51,7 @@ angular.module('BreadNButter',
     .when('/yourrecipes', {
         templateUrl: "./views/yourrecipes.html",
         controller: "YourRecipesController",
-        // requiresLogin: true
+        requiresLogin: true
     })
     .when('/addrecipe', {
         templateUrl: "./views/addrecipe.html",

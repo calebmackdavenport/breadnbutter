@@ -254,7 +254,8 @@ function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
   }
  }])
  .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
-   UserService.me().then((success)=>{
+   UserService.me()
+   .then((me)=>{
      redirect();
    });
 
@@ -268,10 +269,8 @@ function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
 
    $scope.login = function(){
      UserService.login($scope.email, $scope.password)
-     .then(()=>{
+     .then((user)=>{
        redirect();
-     },(err)=>{
-       console.log(err);
      });
    }
  }])
