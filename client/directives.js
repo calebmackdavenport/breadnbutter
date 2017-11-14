@@ -32,6 +32,13 @@ angular.module('BreadNButter.directives', [])
 	};
 }])
 
+.directive('mainFooter', [function() {
+	return {
+		templateUrl: 'directives/footer.html',
+		restrict: 'E', // can only appear as an element.. can't be an attribute.. custom html element
+	};
+}])
+
 .directive('searchToggle', [function() {
 	return {
 		restrict: 'A', 
