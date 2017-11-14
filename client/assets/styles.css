@@ -198,13 +198,9 @@ hr {
     opacity: 0.8;
     color: #fff;
     background: url("https://images.unsplash.com/photo-1474600056930-615c3d706456?auto=format&fit=crop&w=1352&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center center;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
-    position:absolute;
-    top:0; left:0;
-    z-index:1;
+	width: 100%;
+	height: 600px;
+	background-size: cover;
 }
 
 .jumbotron {
@@ -311,13 +307,9 @@ a:hover {
     opacity: 0.9;
     color: #fff;
     background: url("https://images.unsplash.com/photo-1505233276084-d944dbc8f17d?auto=format&fit=crop&w=2550&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center center;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
-    position:absolute;
-    top:0;left:0;
-	z-index:1;
+	width: 100%;
+	height: 600px;
+	background-size: cover;
 
 }
 
@@ -673,18 +665,11 @@ img {
   }
 
 
-.jumbotron-billboard .allrecipes{
-	margin-bottom: 0px;
-	opacity: 0.9;
-	color: #fff;
-	background: url("https://images.unsplash.com/photo-1447078806655-40579c2520d6?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center center;
+.allrecipes{
+	background: url("https://images.unsplash.com/photo-1447078806655-40579c2520d6?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") 0 -200px fixed no-repeat;
 	width: 100%;
-	height: 400px;
+	height: 600px;
 	background-size: cover;
-	overflow: hidden;
-	position:absolute;
-	top:0;left:0;
-	z-index:1;
 }
 	
 .all-recipe-list{
