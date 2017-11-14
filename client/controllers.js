@@ -293,23 +293,18 @@ function ($scope, $rootScope, $routeParams, $http, $location) {
   
 
 }])
-
  //for all recipes from our users
- .controller('AllUserRecipesController', ['$scope', '$location', 'User', 'userRecipe', function($scope, $location, User, userRecipe) {
+ .controller('AllUserRecipesController', ['$scope', 'userRecipe', function($scope, userRecipe) {
     $scope.userRecipes = userRecipe.query();
-    $scope.users = User.query();
  }])
  
  //for single recipe from our users
- .controller('UserRecipeController', ['$scope', 'userRecipe', 'User', '$location', '$routeParams', function ($scope, userRecipe, User, $location, $routeParams) {
+ .controller('UserRecipeController', ['$scope', 'userRecipe','$routeParams', function ($scope, userRecipe, $routeParams) {
   $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
-  $scope.user = User.query();
  
  }])
  
- .controller('AddRecipeController', ['$scope', 'userRecipe', 'User', '$location', function ($scope, userRecipe, User, $location) {
-  $scope.users = User.query();
- 
+ .controller('AddRecipeController', ['$scope', 'userRecipe', '$location', function ($scope, userRecipe, $location) { 
   $scope.save = function () {
       let r = new userRecipe({
           userid: 1,
