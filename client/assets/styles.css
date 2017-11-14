@@ -1,12 +1,7 @@
 
 /* Search Bar Styles */ 
 #search-message {
-<<<<<<< HEAD
-
-	font-size: 4rem;
-=======
 	font-size: 5.5rem;
->>>>>>> dev2
 }
 
 #custom-search-input p {
@@ -151,13 +146,9 @@ hr {
 	background-color: white;
 	-webkit-box-shadow: 0 9px 6px -6px #999;
     -moz-box-shadow: 0 9px 6px -6px #999;
-<<<<<<< HEAD
-    box-shadow: 0 9px 6px -6px #999;
-=======
 	box-shadow: 0 9px 6px -6px #999;
 	height: 5rem;
 	font-size: 25px;
->>>>>>> dev2
 }
 
 #logo {
@@ -291,11 +282,7 @@ a:hover {
 
 .contactus {
 	color: #fff;
-<<<<<<< HEAD
-    background: url("/media/cupcakes.jpg") center -220px fixed;
-=======
     background: url("/media/donuts.jpg") center -200px fixed;
->>>>>>> dev2
 	width: 100%;
 	height: 600px;
 	background-size: cover;
@@ -495,11 +482,7 @@ video {
 	 .content-container {
 	position: absolute;
 	width: 100%;
-<<<<<<< HEAD
-	top: 25%;
-=======
 	top: 50%;
->>>>>>> dev2
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: #FFF;
@@ -945,18 +928,6 @@ img {
 
 }
 
-<<<<<<< HEAD
-/* Contact Envelope */
-
-h1 {
-  text-align: center;
-  color: #a8a8a8;
-  text-shadow: 1px 1px 0 white;
-}
-
-form {
-  max-width: 800px;
-=======
 /* Contact Styles */
 
 .contact-socialmedias {
@@ -969,7 +940,6 @@ form {
 
 form {
   max-width: 804px;
->>>>>>> dev2
   text-align: center;
   margin: 20px auto;
 }
