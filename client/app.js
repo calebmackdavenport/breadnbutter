@@ -65,7 +65,7 @@ angular.module('BreadNButter',
     })
     .when('/aboutus', {
         templateUrl: "./views/aboutus.html",
-        controller: " "
+        controller: "ContactPageController"
     })
     .when('/toprecipes/:id', {
         templateUrl: "./views/toprecipes.html",

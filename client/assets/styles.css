@@ -6,6 +6,10 @@
 	height: 100%;
   }
 
+  .container {
+	min-height: 100%;
+  }
+
 /* Search Bar Styles */ 
 #search-message {
 	font-size: 5.5rem;
