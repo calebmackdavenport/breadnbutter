@@ -1,4 +1,15 @@
 
+* {
+	margin: 0;
+  }
+  html, body {
+	height: 100%;
+  }
+
+  .container {
+	min-height: 100%;
+  }
+
 /* Search Bar Styles */ 
 #search-message {
 	font-size: 5.5rem;
@@ -165,8 +176,8 @@ hr {
 .form-group{
     width: 60em;
     margin: auto;
-    /* background-color: lightcyan; */
 }
+
 
 .form-control{
     margin: 0 auto 1.5em auto;
@@ -175,16 +186,36 @@ hr {
 
 #ingredientsinput{
     height: 7em;
-    width: 60em;
+    width: 50.3em;
+}
+
+#basic-addon2 {
+	margin-top: 5px;
 }
 
 #directionsinput{
     height: 10em;
-    width: 60em;
+    width: 50.3em;
 }
 
 #qty{
     width: 5em;
+}
+
+#add-new {
+	width: 300px;
+	height: 50px;
+	font-size: 25px;
+	
+}
+
+#save-new {
+	width: 300px;
+	height: 50px;
+	font-size: 25px;
+	display: inline-block;
+	line-height: 3px;
+
 }
 
 #newrecipebtn{
@@ -193,18 +224,18 @@ hr {
     left:50%; */
 }
 
-.jumbotron-billboard .img {
-    margin-bottom: 0px;
-    opacity: 0.8;
-    color: #fff;
-    background: url("https://images.unsplash.com/photo-1474600056930-615c3d706456?auto=format&fit=crop&w=1352&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center center;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
-    position:absolute;
-    top:0; left:0;
-    z-index:1;
+ .addrecipe {
+    background: url("/media/recipe.jpg") 0 -200px fixed;
+	width: 100%;
+	height: 600px;
+	background-size: cover;
+}
+
+.add-recipe-title {
+	text-align: center;
+	font-size: 20px;
+	letter-spacing: 2px;
+	left: 5%;
 }
 
 .jumbotron {
@@ -306,18 +337,11 @@ a:hover {
 	margin: auto;
 }
 
-.jumbotron-billboard .userportal {
-    margin-bottom: 0px;
-    opacity: 0.9;
-    color: #fff;
+.userportal {
     background: url("https://images.unsplash.com/photo-1505233276084-d944dbc8f17d?auto=format&fit=crop&w=2550&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center center;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
-    position:absolute;
-    top:0;left:0;
-	z-index:1;
+	width: 100%;
+	height: 600px;
+	background-size: cover;
 
 }
 
@@ -331,11 +355,24 @@ a:hover {
 
 }
 
-#carousel-item-size{
-	width: 25em;
-	height: 21em;
-	margin: auto;
+
+/* Top Recipes Styles */
+.toprecipes {
+	background: url("/media/tomatopizza.jpg") 0 -330px fixed no-repeat;
+	width: 100%;
+	height: 600px;
+	background-size: cover;
 }
+
+/* Your Recipes */
+
+.yourrecipes {
+	background: url("/media/cupcakes.jpg") 0 -200px fixed no-repeat;
+	width: 100%;
+	height: 550px;
+	background-size: cover;
+}
+
 /* Single View Styles */
 
 
@@ -365,7 +402,6 @@ a:hover {
 	text-align: center;
 	font-size: 1rem;
 	margin-bottom: 2.8rem;
-	margin-left: -5.6rem;
 }
 
 .ingredients-container, .directions-container {
@@ -439,6 +475,11 @@ a:hover {
 	margin-left: 40px;
 }
 
+/* Login Styles */
+
+.login-header {
+	text-align: center;
+}
 
 /* Testing */
 
@@ -673,18 +714,11 @@ img {
   }
 
 
-.jumbotron-billboard .allrecipes{
-	margin-bottom: 0px;
-	opacity: 0.9;
-	color: #fff;
-	background: url("https://images.unsplash.com/photo-1447078806655-40579c2520d6?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") center center;
+.allrecipes{
+	background: url("https://images.unsplash.com/photo-1447078806655-40579c2520d6?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") 0 -200px fixed no-repeat;
 	width: 100%;
-	height: 400px;
+	height: 600px;
 	background-size: cover;
-	overflow: hidden;
-	position:absolute;
-	top:0;left:0;
-	z-index:1;
 }
 	
 .all-recipe-list{
@@ -1014,5 +1048,106 @@ form textarea {
 .cf:after {
   clear: both;
 }
+
+/* login */
+
+
+
+
+.nav-login {
+	margin: 0 auto;
+	margin-top: 45px;
+	width: 500px;
+	height: 300px;
+	background: #fff;
+	border-radius: 5px; 
+	text-align: center;
+	padding-top: 1px;
+	box-shadow: 0 0 10px rgba(0,0,0, .5);
+	padding-left: 30px;
+	margin-bottom: 150px;
+
+}
+
+.username {
+	border: 1px solid #a6a6a6;
+	width: 430px;
+	height: 60px;
+	border-radius: 3px;
+	margin-top: 40px;
+	padding-left: 9px;
+	color: #6c6c6c;
+	background: #fcfcfc;
+	outline: none;
+	font-size: 20px;
+}
+
+.password {
+	border: 1px solid #a6a6a6;
+	width: 430px;
+	height: 60px;
+	border-radius: 3px;
+	margin-top: 20px;
+	color: #6c6c6c;
+	background: #fcfcfc;
+	outline: none;
+	font-size: 20px;
+}
+
+.password:hover, .username:hover {
+	box-shadow: 0 0 10px rgba(178,34,34, 1); 
+	border: 1px #b22222	 solid ;
+}
+
+.password:focus, .username:focus, .button:focus, .button:hover:focus{
+	box-shadow: 0 0 10px rgba(178,34,34, 1); 
+	border: 1px #b22222	 solid ;
+}
+
+.login-button {
+  color:#fff;
+  font-size:20px;
+	border: 1px solid #a6a6a6;
+	width: 243px;
+	height: 60px;
+	border-radius: 5px;
+	margin-top: 15px;
+	margin-left: 90px;
+	outline: none;
+	line-height: 4px;
+  background: rgb(255,48,25); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgb(255,48,25) 0%, rgb(207,4,4) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(255,48,25)), color-stop(100%,rgb(207,4,4))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgb(255,48,25) 0%,rgb(207,4,4) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgb(255,48,25) 0%,rgb(207,4,4) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgb(255,48,25) 0%,rgb(207,4,4) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgb(255,48,25) 0%,rgb(207,4,4) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
+}
+
+  
+.button:hover{
+    background: rgb(204,0,0); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgb(204,0,0) 0%, rgb(204,0,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(204,0,0)), color-stop(100%,rgb(204,0,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgb(204,0,0) 0%,rgb(204,0,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgb(204,0,0) 0%,rgb(204,0,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgb(204,0,0) 0%,rgb(204,0,0) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgb(204,0,0) 0%,rgb(204,0,0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#cc0000',GradientType=0 ); /* IE6-9 */
+}
+  
+label {
+  position: relative;
+  top: 5px;
+  margin-right: 115px;
+}
+label span {
+  margin-left: 5px;
+  font-size:14px;
+}
+
+	
+
 
 

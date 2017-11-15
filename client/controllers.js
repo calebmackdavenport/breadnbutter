@@ -238,7 +238,10 @@ function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
   }
 
 }])
-.controller('ContactPageController', ['$scope', 'ContactForm', function($scope, ContactForm){
+.controller('ContactPageController', ['$scope', 'ContactForm', '$anchorScroll', function($scope, ContactForm, $anchorScroll){
+  $anchorScroll('top');
+  $anchorScroll('#top');
+  
   $scope.send = function(){
     let contact = new ContactForm({
       from: $scope.email,
@@ -248,14 +251,17 @@ function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
     });
  
     contact.$save(function(){
-      alert ("Thank you for your message! Bon appetit!")
     }, function(err){
       console.log(err);
     });
   }
  }])
- .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
-   UserService.me().then((success)=>{
+ .controller('LoginController', ['$scope', '$location', 'UserService', '$anchorScroll', function($scope, $location, UserService, $anchorScroll) {
+  $anchorScroll('top');
+  $anchorScroll('#top');
+  
+  UserService.me()
+   .then((me)=>{
      redirect();
    });
 
@@ -269,16 +275,17 @@ function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
 
    $scope.login = function(){
      UserService.login($scope.email, $scope.password)
-     .then(()=>{
+     .then((user)=>{
        redirect();
-     },(err)=>{
-       console.log(err);
      });
    }
  }])
  
  //for your recipes
- .controller('YourRecipesController', ['$scope', '$location', 'User', 'userRecipe', 'recipeByUser', function($scope, $location, User, userRecipe, recipeByUser) {
+ .controller('YourRecipesController', ['$scope', '$location', 'User', 'userRecipe', 'recipeByUser', '$anchorScroll', function($scope, $location, User, userRecipe, recipeByUser, $anchorScroll) {
+  $anchorScroll('top');
+  $anchorScroll('#top');
+
   $scope.recipeByUser = recipeByUser.query({id:1});
   console.log($scope.recipeByUser);
   $scope.users = User.get({ id: 1 })
@@ -296,17 +303,26 @@ function ($scope, $rootScope, $routeParams, $http, $location, $anchorScroll) {
 
 }])
  //for all recipes from our users
- .controller('AllUserRecipesController', ['$scope', 'userRecipe', function($scope, userRecipe) {
+ .controller('AllUserRecipesController', ['$scope', 'userRecipe', '$anchorScroll', function($scope, userRecipe, $anchorScroll) {
+  $anchorScroll('top');
+  $anchorScroll('#top');
+
     $scope.userRecipes = userRecipe.query();
  }])
  
  //for single recipe from our users
- .controller('UserRecipeController', ['$scope', 'userRecipe','$routeParams', function ($scope, userRecipe, $routeParams) {
+ .controller('UserRecipeController', ['$scope', 'userRecipe','$routeParams', '$anchorScroll', function ($scope, userRecipe, $routeParams, $anchorScroll) {
+  $anchorScroll('top');
+  $anchorScroll('#top');
+  
   $scope.userRecipe = userRecipe.get({ id: $routeParams.id })
  
  }])
  
- .controller('AddRecipeController', ['$scope', 'userRecipe', '$location', function ($scope, userRecipe, $location) { 
+ .controller('AddRecipeController', ['$scope', 'userRecipe', '$location', '$anchorScroll', function ($scope, userRecipe, $location, $anchorScroll) { 
+  $anchorScroll('top');
+  $anchorScroll('#top');
+
   $scope.save = function () {
       let r = new userRecipe({
           userid: 1,

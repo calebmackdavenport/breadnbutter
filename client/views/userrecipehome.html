@@ -1,45 +1,27 @@
 <main-nav></main-nav>
-
-<div class="jumbotron jumbotron-billboard">
-    <div class="userportal"></div>
-    <div class="container">
-        <div class="row">
+<a id="top"></a>
+<div class="jumbotron jumbotron-billboard userportal">
             <div class="col-lg-12">
-                <h1 class="aboutusheading">Member recipe portal</h1>
+                <h1 class="contactusheading">Member Recipe Portal</h1>
                 <p class="contactuslead">Have a great recipe idea to share with other members?</p>
             </div>
         </div>
-    </div>
-</div>
-</div>
+
 
 <br>
+<br>
 
-<div class="login-container">
-<div class="container">
-    <div class="row" id="userportal">
-        <h4>Please login to add your recipe</h4>
+
+<h1 class="login-header">Please login to add your recipe</h1>
+
+<div class="nav-login">
         <form ng-submit="login()">
-            <br>
-            <div class="form-group row">
-                <label for="loginEmail" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-5">
-                    <input type="email" class="form-control" id="loginEmail" placeholder="Email" ng-model="email">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="loginPassword" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-5">
-                    <input type="password" class="form-control" id="loginPassword" placeholder="Password" ng-model="password">
-                </div>
-            </div>
+        <input type="email" class="username" ng-model="email" placeholder="Email" />
+        <input type="password" class="password" ng-model="password" placeholder="Password" />
+        <input type="submit" value="Sign In" class="login-button" alt=""/></br>
         </form>
-        <br>
-        <a class="btn view-btn search" href="/yourrecipes" role="button" ng-click="login()">Login</a>
-    </div>
-</div>
-</div>
+        
+        </div>
+    <main-footer></main-footer>
 
-<br>
-<br>
-<br>
+        
