@@ -2,10 +2,10 @@ import * as mysql from 'mysql';
 
 export let pool = mysql.createPool({
     connectionLimit: 10,
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    host: process.env.DATABASE_URL,
+    user: process.env.CLEARDB_USERNAME,
+    password: process.env.CLEARDB_PASSWORD,
+    database: process.env.CLEARDB_DATABASE
 });
 
 // SQL procedures
