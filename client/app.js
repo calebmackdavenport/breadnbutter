@@ -42,7 +42,8 @@ angular.module('BreadNButter',
         controller: "SinglePageController"
     })
     .when('/recipes/302', {
-        templateUrl: '/views/burger.html'
+        templateUrl: '/views/burger.html',
+        controller: "SinglePageController"
     })
     .when('/grocerylist', {
         templateUrl: "views/list.html",
